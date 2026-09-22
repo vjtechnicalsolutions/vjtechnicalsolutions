@@ -248,7 +248,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: "Yachting",
     blurb: "Superyacht-grade bandwidth, crew Wi-Fi and guest experience systems",
-    image: "https://images.unsplash.com/photo-1598737285721-29346a5c9278?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://images.unsplash.com/photo-1629736656534-d7b45d4cd8e8?crop=entropy&cs=srgb&fm=jpg&q=85",
   },
   {
     name: "Cruise & Ferries",
@@ -277,7 +277,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     name: "Enterprise & Onshore",
-    blurb: "Office, warehouse and CCTV networks run by the same NOC",
+    blurb: "Office, warehouse and CCTV networks by the same field team",
     image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/5bb2478d8c0c871e8492ca13e9a35928557f8274e3b3d87eddcf35a4c78ff531.jpeg",
   },
 ];
