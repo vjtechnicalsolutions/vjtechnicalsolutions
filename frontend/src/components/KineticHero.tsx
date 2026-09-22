@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Activity, Signal, ArrowUpDown } from "lucide-react";
 import { MaskedLine } from "./Reveal";
-import { SYSTEMS, STATS } from "@/lib/site";
+import { SYSTEMS, STATS, VJ_IMAGES } from "@/lib/site";
 
 export default function KineticHero() {
   const [activeId, setActiveId] = useState(SYSTEMS[0].id);
@@ -15,8 +15,8 @@ export default function KineticHero() {
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[#071c38] pt-[76px]">
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
         <img
-          src="/assets/maritime-radome-sunset.png"
-          alt="VSAT radome array on a vessel mast at sunset"
+          src={VJ_IMAGES.hero}
+          alt="VJ Technical Solutions container vessel with satellite antenna at dusk"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#031427]/95 via-[#05192e]/80 to-[#05192e]/40" />

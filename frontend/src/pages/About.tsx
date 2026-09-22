@@ -32,8 +32,8 @@ export default function About() {
         <FadeUp>
           <div className="group relative overflow-hidden rounded-2xl border border-[#dce6ef] shadow-[0_16px_48px_rgba(7,31,55,0.1)]">
             <img
-              src="https://images.unsplash.com/photo-1782940983972-357de3c6735a?crop=entropy&cs=srgb&fm=jpg&q=85"
-              alt="Vessel mast with VSAT and navigation antennas"
+              src="https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/baf71f709dcfde7210581b0548d8477c02c2b7cf8d21e6b47cf2194dce050651.jpeg"
+              alt="VJ engineer servicing a vessel radome at golden hour"
               className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>

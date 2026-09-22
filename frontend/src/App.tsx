@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
+import SolutionDetail from "@/pages/SolutionDetail";
 import Coverage from "@/pages/Coverage";
 import About from "@/pages/About";
 import News from "@/pages/News";
@@ -24,6 +25,7 @@ function AppRouter() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/solutions/:systemId" element={<SolutionDetail />} />
         <Route path="/coverage" element={<Coverage />} />
         <Route path="/about" element={<About />} />
         <Route path="/news" element={<News />} />

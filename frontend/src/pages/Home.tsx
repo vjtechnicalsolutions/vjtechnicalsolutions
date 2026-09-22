@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import KineticHero from "@/components/KineticHero";
 import EditorialRibbon from "@/components/EditorialRibbon";
+import PillarsStrip from "@/components/PillarsStrip";
 import CapabilitiesGrid from "@/components/CapabilitiesGrid";
 import ServicesMatrix from "@/components/ServicesMatrix";
+import SolutionsGrid from "@/components/SolutionsGrid";
 import EngineerManifesto from "@/components/EngineerManifesto";
 import { FadeUp, SectionHeading } from "@/components/Reveal";
+import { VJ_IMAGES } from "@/lib/site";
 
 const TICKS = [
   "Maritime SATCOM & vessel IT support",
@@ -14,9 +17,7 @@ const TICKS = [
   "Network, firewall, CCTV and connectivity support",
 ];
 
-const INDUSTRIES = ["Commercial Shipping", "Offshore & Marine", "Fishing Vessels", "Yachting", "Remote Sites", "Industrial", "Enterprise IT", "Onshore Offices"];
-
-const STATS = [
+const STATS_BAND = [
   { v: "SATCOM", l: "Connectivity Support" },
   { v: "VESSEL IT", l: "Network & IT Support" },
   { v: "FIELD", l: "Installation & Attendance" },
@@ -28,6 +29,7 @@ export default function Home() {
     <>
       <KineticHero />
       <EditorialRibbon />
+      <PillarsStrip />
       <CapabilitiesGrid />
 
       <div className="bg-[#f5f8fb]">
@@ -64,43 +66,23 @@ export default function Home() {
         <FadeUp delay={0.1}>
           <div className="group relative overflow-hidden rounded-2xl border border-[#dce6ef] shadow-[0_16px_48px_rgba(7,31,55,0.1)]">
             <img
-              src="https://images.pexels.com/photos/36511255/pexels-photo-36511255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt="Field engineer servicing a vessel radome"
+              src={VJ_IMAGES.engineer}
+              alt="VJ field engineer servicing vessel equipment at golden hour"
               className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071c38]/90 to-transparent p-6">
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#5bb7f5]">Field Operations</p>
-              <p className="mt-1 font-heading text-lg font-bold text-white">Radome service, port of call — 04:30 UTC</p>
+              <p className="mt-1 font-heading text-lg font-bold text-white">Attendance &amp; repair — port of call, 04:30 UTC</p>
             </div>
           </div>
         </FadeUp>
       </section>
 
-      <section className="bg-[#f5f8fb]">
-        <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-          <SectionHeading eyebrow="Industries" title="Supporting connected environments" align="center" />
-          <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {INDUSTRIES.map((ind, i) => (
-              <FadeUp key={ind} delay={i * 0.04}>
-                <div
-                  className="relative flex h-36 items-end overflow-hidden rounded-xl border border-[#dce6ef] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(7,31,55,0.18)]"
-                  style={{
-                    backgroundImage: "linear-gradient(160deg, rgba(7,28,56,0.85), rgba(8,118,209,0.45)), url(https://images.pexels.com/photos/32630439/pexels-photo-32630439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <span className="font-heading text-base font-bold text-white">{ind}</span>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SolutionsGrid />
 
       <section className="bg-[#071c38]">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-14 text-center lg:grid-cols-4 lg:px-8">
-          {STATS.map((s) => (
+          {STATS_BAND.map((s) => (
             <FadeUp key={s.l}>
               <p className="font-heading text-2xl font-extrabold text-[#5bb7f5] sm:text-3xl">{s.v}</p>
               <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#b9cad8]">{s.l}</p>
@@ -113,8 +95,8 @@ export default function Home() {
 
       <section className="relative overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1608936511952-11bd2edde695?crop=entropy&cs=srgb&fm=jpg&q=85"
-          alt="Vessel underway at night"
+          src={VJ_IMAGES.hero}
+          alt="VJ Technical Solutions vessel with satellite connectivity at dusk"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#041222]/95 via-[#06213d]/90 to-[#086db8]/60" />

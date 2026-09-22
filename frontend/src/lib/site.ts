@@ -27,7 +27,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "Cargo, OSV & superyachts needing high-throughput primary",
     blurb:
       "High-throughput, low-latency LEO broadband. We install, commission and support single and dual flat-HP arrays with masthead obstruction surveys and bonded failover.",
-    image: "https://images.unsplash.com/photo-1756573346001-6c3ab30e837b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/57d6367349f127349472a3b7e234842588482b7dab88e268bf359817e039755b.jpeg",
   },
   {
     id: "oneweb",
@@ -233,7 +233,262 @@ export const FALLBACK_POSTS: Post[] = [
   },
 ];
 
+export interface Industry {
+  name: string;
+  blurb: string;
+  image: string;
+}
+
+export const INDUSTRIES: Industry[] = [
+  {
+    name: "Commercial Shipping",
+    blurb: "Container, bulk and tanker fleets on LEO + VSAT hybrid networks",
+    image: "https://images.pexels.com/photos/12530465/pexels-photo-12530465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    name: "Yachting",
+    blurb: "Superyacht-grade bandwidth, crew Wi-Fi and guest experience systems",
+    image: "https://images.unsplash.com/photo-1598737285721-29346a5c9278?crop=entropy&cs=srgb&fm=jpg&q=85",
+  },
+  {
+    name: "Cruise & Ferries",
+    blurb: "High-density passenger connectivity and operational data links",
+    image: "https://images.unsplash.com/photo-1614095557130-2f4a9e1da57d?crop=entropy&cs=srgb&fm=jpg&q=85",
+  },
+  {
+    name: "Fishing Fleets",
+    blurb: "Ruggedised links and catch reporting for deep-sea fleets",
+    image: "https://images.pexels.com/photos/27041514/pexels-photo-27041514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    name: "Offshore & Energy",
+    blurb: "Rigs, OSVs and wind farms with Certus polar-safe failover",
+    image: "https://images.unsplash.com/photo-1690508313456-bf8c851e8319?crop=entropy&cs=srgb&fm=jpg&q=85",
+  },
+  {
+    name: "Naval & Patrol",
+    blurb: "Secure, resilient comms for patrol and government vessels",
+    image: "https://images.unsplash.com/photo-1771331515085-e3eaa2f8b64d?crop=entropy&cs=srgb&fm=jpg&q=85",
+  },
+  {
+    name: "Remote Sites",
+    blurb: "Rapid-deploy connectivity for remote industrial locations",
+    image: "https://images.pexels.com/photos/35486164/pexels-photo-35486164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    name: "Enterprise & Onshore",
+    blurb: "Office, warehouse and CCTV networks run by the same NOC",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/5bb2478d8c0c871e8492ca13e9a35928557f8274e3b3d87eddcf35a4c78ff531.jpeg",
+  },
+];
+
 export const STATS = { vessels: "350+", ports: "40+", systems: "5", watch: "24/7" };
+
+export interface Product {
+  name: string;
+  tagline: string;
+  bullets: string[];
+  path: string;
+}
+
+export interface SolutionCategory {
+  id: string;
+  label: string;
+  tagline: string;
+  products: Product[];
+}
+
+export const SOLUTION_CATEGORIES: SolutionCategory[] = [
+  {
+    id: "connectivity",
+    label: "Connectivity",
+    tagline: "Multi-orbit SATCOM across LEO, GEO and hybrid architectures",
+    products: [
+      { name: "Starlink Maritime", tagline: "High-throughput LEO internet with sub-50 ms latency.", bullets: ["Up to 220 Mbps download at sea", "Flat HP marine-rated hardware", "Dual-dish obstruction-proof configs"], path: "/solutions/starlink" },
+      { name: "Eutelsat OneWeb", tagline: "Enterprise LEO with strong polar and northern route coverage.", bullets: ["Committed information rates", "Enterprise SLAs", "Failover-ready hybrid architecture"], path: "/solutions/oneweb" },
+      { name: "Iridium Certus", tagline: "True global fallback via Iridium's L-band network.", bullets: ["Coverage including the poles", "Mission-critical fallback link", "Voice and data on one platform"], path: "/solutions/iridium" },
+      { name: "VSAT (Ku / Ka) — KVH", tagline: "Proven GEO backbone for ocean-scale, predictable bandwidth.", bullets: ["Wide-area ocean coverage", "Stable backbone for routine data", "Cost-effective metered plans"], path: "/solutions/kvh" },
+      { name: "FleetBroadband", tagline: "Inmarsat FBB for voice, data and safety on all vessel sizes.", bullets: ["Class 250 and 500 terminals", "Simultaneous voice and data", "GMDSS-compliant safety channel"], path: "/solutions/fleetbroadband" },
+      { name: "LTE / 4G Hybrid", tagline: "Automatic port-side LTE offload to reduce satellite spend.", bullets: ["SIM-based automatic offload", "Reduces VSAT consumption near shore", "Integrated via SD-WAN routing"], path: "/quote" },
+    ],
+  },
+  {
+    id: "it",
+    label: "IT & Cybersecurity",
+    tagline: "Managed IT, endpoint security and SD-WAN fleet network management",
+    products: [
+      { name: "Vessel IT & Networking", tagline: "Complete onboard LAN/WAN built and supported by one team.", bullets: ["MikroTik routing and switching", "Servers, computers and Wi-Fi", "Documentation and handover"], path: "/quote" },
+      { name: "Firewall & Cybersecurity", tagline: "Segmented, survey-ready networks aligned to IACS E26/E27.", bullets: ["Managed WAN-edge firewall", "OT / business / crew VLANs", "Audit evidence pack included"], path: "/quote" },
+      { name: "SD-WAN Fleet Management", tagline: "Bonded multi-bearer routing with central NOC visibility.", bullets: ["Sub-300 ms failover", "Per-bearer health probes", "Cost and latency steering"], path: "/quote" },
+    ],
+  },
+  {
+    id: "crew",
+    label: "Crew Engagement",
+    tagline: "Connectivity, wellbeing and communication solutions for seafarers",
+    products: [
+      { name: "Crew Wi-Fi & Quotas", tagline: "Fair, managed internet access that protects operations.", bullets: ["Captive portal vouchers", "Per-crew bandwidth quotas", "Usage reporting to shore"], path: "/quote" },
+      { name: "VoIP & DID Calling", tagline: "Direct numbers for crew and officers reachable from shore.", bullets: ["VoIP over satellite", "Individual DID per officer", "QoS-managed call quality"], path: "/quote" },
+    ],
+  },
+  {
+    id: "ot",
+    label: "Operational Technologies",
+    tagline: "Surveillance, safety and commissioning systems for daily operations",
+    products: [
+      { name: "Marine CCTV & Security", tagline: "AI-ready IP surveillance with shore-side viewing.", bullets: ["Marinised camera housings", "Onboard NVR storage", "Low-bandwidth remote viewing"], path: "/quote" },
+      { name: "Installation & Repair", tagline: "Our core field work — attendance, install and fault restoration.", bullets: ["Port attendance at 40+ ports", "Underway fault diagnosis", "Flyaway kit deployment"], path: "/quote" },
+      { name: "GMDSS & Commissioning", tagline: "Survey-ready safety comms and system handover.", bullets: ["Radio survey documentation", "Commissioning and sea trials", "Certified test reports"], path: "/quote" },
+    ],
+  },
+];
+
+export const VJ_IMAGES = {
+  hero: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/3f5a94e1d05f73c0e2622ab20bb6ad6e5d3dcb5f149bff206bffaf8ede53c3ab.jpeg",
+  flatpanel: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/046b69d91f66c6777aa6ab4a5db103cb2a07d9dfcdca0baa71d7b894ca9e0896.jpeg",
+  engineer: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/baf71f709dcfde7210581b0548d8477c02c2b7cf8d21e6b47cf2194dce050651.jpeg",
+  starlinkMounted: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/57d6367349f127349472a3b7e234842588482b7dab88e268bf359817e039755b.jpeg",
+  cctvVessel: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/6d2e43237302b6737cb7fed62d0fcb0682c633cd022c9753a75f2daa5cfce278.jpeg",
+  mikrotik: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/3f7f6d8e04edc3d9093c882182a057435cd8aa85c2446ef9ed1b362f968c7f91.jpeg",
+  cisco: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/5bb2478d8c0c871e8492ca13e9a35928557f8274e3b3d87eddcf35a4c78ff531.jpeg",
+};
+
+export interface SolutionDetail {
+  eyebrow: string;
+  intro: string;
+  features: string[];
+  benefits: string[];
+  useCases: { title: string; text: string }[];
+  cta: string;
+}
+
+export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
+  starlink: {
+    eyebrow: "STARLINK FOR BUSINESS",
+    intro:
+      "Starlink Maritime is a high-performance satellite internet solution for vessels that need real broadband at sea. It delivers fast, low-latency connectivity across the globe — seamless operations, remote communication and real-time data exchange for commercial fleets, offshore industries and high-demand maritime applications.",
+    features: [
+      "Download speeds up to 220+ Mbps",
+      "Latency under 99 ms for real-time use",
+      "Global coverage, including international waters",
+      "Scalable for business-critical operations",
+      "Centralised remote management portal",
+    ],
+    benefits: [
+      "Improves crew welfare with fast personal connectivity",
+      "Real-time monitoring and operational diagnostics",
+      "Uninterrupted communication for operations at sea",
+      "Supports cloud applications and remote collaboration",
+    ],
+    useCases: [
+      { title: "Commercial Shipping", text: "Reliable communication and navigation support on the busiest trade routes." },
+      { title: "Research Vessels", text: "Real-time sensor data exchange and remote monitoring on long expeditions." },
+      { title: "Offshore Energy", text: "High-speed internet for rigs, platforms and wind-farm support vessels." },
+      { title: "Enterprise & Remote Sites", text: "Cloud applications and remote IT management beyond terrestrial networks." },
+    ],
+    cta: "Enhance connectivity with Starlink — talk to us about your fleet.",
+  },
+  oneweb: {
+    eyebrow: "ONEWEB ENTERPRISE",
+    intro:
+      "Eutelsat OneWeb delivers low-latency, high-speed broadband through a Low Earth Orbit constellation, giving vessels seamless global coverage — including polar regions — with enterprise-grade service levels and committed information rates.",
+    features: [
+      "Low-latency broadband powered by LEO satellites",
+      "High-speed connectivity optimised for maritime use",
+      "Global coverage including remote and polar regions",
+      "Secure and scalable network infrastructure",
+      "Reliable performance in challenging weather",
+    ],
+    benefits: [
+      "Real-time data transfer for fleet management",
+      "High-speed internet for crew communication and welfare",
+      "Supports cloud-based applications and remote work",
+      "Encrypted network protects sensitive maritime data",
+    ],
+    useCases: [
+      { title: "Merchant Fleets", text: "Continuous, SLA-backed communication across global shipping lanes." },
+      { title: "Offshore & Energy", text: "Low-latency links for remote drilling and monitoring systems." },
+      { title: "Yachting & Leisure", text: "Premium shore-like internet for owners, guests and charter operations." },
+      { title: "Enterprise", text: "Secure, scalable connectivity for distributed remote operations." },
+    ],
+    cta: "Upgrade your fleet with OneWeb's cutting-edge LEO connectivity.",
+  },
+  kvh: {
+    eyebrow: "KVH VSAT (KU / KA)",
+    intro:
+      "KVH TracPhone VSAT is the proven GEO workhorse of the maritime world. We install, maintain and re-role TracPhone domes as managed secondary bearers — protecting your existing hardware investment while LEO carries primary traffic.",
+    features: [
+      "Proven Ku/Ka-band HTS performance",
+      "Global mini-VSAT network coverage",
+      "Gyro-stabilised dome antennas, 60 cm–1 m",
+      "Metered airtime options for cost control",
+      "Ideal managed failover under SD-WAN control",
+    ],
+    benefits: [
+      "Protects your existing VSAT hardware investment",
+      "Predictable, metered airtime costs",
+      "Survey-friendly legacy compliance record",
+      "Smooth migration path toward LEO primary",
+    ],
+    useCases: [
+      { title: "Existing Dome Fleets", text: "Re-role working TracPhone systems instead of ripping them out." },
+      { title: "Tankers & Bulk Carriers", text: "Dependable secondary bearer on long ocean legs." },
+      { title: "Backup Bearer", text: "Metered failover that only bills when it carries traffic." },
+      { title: "Coastal Fleets", text: "Cost-efficient coverage for regional trading patterns." },
+    ],
+    cta: "Keep your VSAT investment working — bonded with modern LEO.",
+  },
+  iridium: {
+    eyebrow: "IRIDIUM CERTUS",
+    intro:
+      "Iridium Certus is the only truly global satellite network — pole to pole, in any weather. Certus 700 delivers genuine L-band broadband and GMDSS safety services where GEO VSAT simply cannot reach.",
+    features: [
+      "Truly global, pole-to-pole LEO coverage",
+      "Weatherproof L-band reliability",
+      "GMDSS safety services integration",
+      "Compact above-deck units, quick installs",
+      "Certus 700 broadband up to 704 kbps",
+    ],
+    benefits: [
+      "Safety compliance assured for radio survey",
+      "Works where GEO drops below the horizon",
+      "Low power draw and rugged hardware",
+      "Crew calling and messaging anywhere on Earth",
+    ],
+    useCases: [
+      { title: "Polar & High-Latitude", text: "The only bearer that works above ~75° where GEO fails." },
+      { title: "Fishing Fleets", text: "Weatherproof safety and catch reporting in harsh seas." },
+      { title: "Emergency & Safety", text: "GMDSS distress, safety and voice continuity services." },
+      { title: "Offshore Support", text: "Reliable fallback for OSVs operating far from shore." },
+    ],
+    cta: "Guarantee coverage everywhere your vessel trades — including the poles.",
+  },
+  fleetbroadband: {
+    eyebrow: "INMARSAT FLEETBROADBAND",
+    intro:
+      "FleetBroadband 250/500 remains the compliance backbone on thousands of hulls. We maintain, migrate and consolidate FBB estates — keeping voice and safety services alive while fleets move primary traffic to LEO.",
+    features: [
+      "FBB 250/500 terminals, global I-4/I-6 coverage",
+      "Simultaneous voice and data",
+      "Legacy GMDSS compliance support",
+      "Low-cost, widely available hardware",
+      "Simple integration with modern routers",
+    ],
+    benefits: [
+      "Keeps legacy compliance intact during migration",
+      "Voice continuity for bridge and crew",
+      "Inexpensive always-on backup channel",
+      "Decades of field knowledge on every model",
+    ],
+    useCases: [
+      { title: "Legacy Compliance", text: "Maintain GMDSS obligations while modernising primary links." },
+      { title: "Backup Bearer", text: "Always-on tertiary path behind LEO and VSAT." },
+      { title: "Small Vessels", text: "Affordable entry-level global voice and data." },
+      { title: "Coastal Fishing", text: "Simple, dependable comms for regional fleets." },
+    ],
+    cta: "Modernise without losing your compliance backbone.",
+  },
+};
 
 export const SYSTEM_OPTIONS = [
   "Starlink Maritime",

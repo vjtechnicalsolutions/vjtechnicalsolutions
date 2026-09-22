@@ -109,11 +109,11 @@ export default function ServicesMatrix() {
             </div>
 
             <Link
-              to="/quote"
-              data-testid={`matrix-quote-${active.id}`}
+              to={`/solutions/${active.id}`}
+              data-testid={`matrix-explore-${active.id}`}
               className="group mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#0876d1] transition-colors hover:text-[#075db1]"
             >
-              Spec this system for my vessel
+              Explore the full solution
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

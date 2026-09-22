@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import { BrandMark } from "./Header";
 
-const SYSTEMS_LINKS = ["Starlink Maritime LEO", "Eutelsat OneWeb", "KVH TracPhone VSAT", "Iridium Certus 700", "Inmarsat FleetBroadband"];
+const SYSTEMS_LINKS = [
+  { name: "Starlink Maritime LEO", path: "/solutions/starlink" },
+  { name: "Eutelsat OneWeb", path: "/solutions/oneweb" },
+  { name: "KVH TracPhone VSAT", path: "/solutions/kvh" },
+  { name: "Iridium Certus 700", path: "/solutions/iridium" },
+  { name: "Inmarsat FleetBroadband", path: "/solutions/fleetbroadband" },
+];
 const SERVICE_LINKS = ["Vessel IT & Networking", "CCTV & Security", "Firewall & Cybersecurity", "Installation & Repair", "Remote Support"];
 
 export default function Footer() {
@@ -24,11 +30,11 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">Systems</h3>
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">Solutions</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-[#b9cad8]">
               {SYSTEMS_LINKS.map((s) => (
-                <li key={s}>
-                  <Link to="/services" className="transition-colors hover:text-[#5bb7f5]">{s}</Link>
+                <li key={s.path}>
+                  <Link to={s.path} className="transition-colors hover:text-[#5bb7f5]">{s.name}</Link>
                 </li>
               ))}
             </ul>
@@ -55,7 +61,6 @@ export default function Footer() {
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>
               <li><Link to="/careers" className="transition-colors hover:text-[#5bb7f5]">Careers</Link></li>
               <li><Link to="/faq" className="transition-colors hover:text-[#5bb7f5]">FAQ</Link></li>
-              <li><Link to="/admin" className="transition-colors hover:text-[#5bb7f5]">NOC Admin Portal</Link></li>
             </ul>
           </div>
         </div>

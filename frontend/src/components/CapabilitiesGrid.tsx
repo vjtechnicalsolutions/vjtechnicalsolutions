@@ -1,5 +1,6 @@
 import { Wrench, Headset, Satellite, Network, Video, ShieldCheck, Radio, BadgeCheck } from "lucide-react";
 import { FadeUp, SectionHeading } from "./Reveal";
+import { VJ_IMAGES } from "@/lib/site";
 
 const CAPABILITIES = [
   {
@@ -18,19 +19,19 @@ const CAPABILITIES = [
     icon: Satellite,
     title: "Satellite Connectivity",
     text: "Starlink Maritime, VSAT/KVH, OneWeb, Iridium Certus and hybrid connectivity support.",
-    image: "https://images.unsplash.com/photo-1773161960044-4636c76b22fc?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: VJ_IMAGES.flatpanel,
   },
   {
     icon: Network,
     title: "Vessel IT & Networking",
     text: "LAN/WAN, Wi-Fi, MikroTik, routers, switches, computers, servers and onboard network support.",
-    image: "https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: VJ_IMAGES.mikrotik,
   },
   {
     icon: Video,
     title: "Marine CCTV & Security",
     text: "IP camera systems, marinised housings, onboard NVR and remote viewing over the bonded link.",
-    image: "https://images.unsplash.com/photo-1589935447067-5531094415d1?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: VJ_IMAGES.cctvVessel,
   },
   {
     icon: ShieldCheck,
