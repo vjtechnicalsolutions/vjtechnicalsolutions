@@ -66,8 +66,8 @@ export default function CapabilitiesGrid() {
     <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
       <SectionHeading
         eyebrow="Our Capabilities"
-        title="Installation, spares & field work — done on board"
-        copy="Our core work is hands-on: attending vessels, installing and repairing systems, and arranging genuine spares. Everything is delivered by our own field engineers."
+        title="Vessel attendance, installation & repair — plus genuine spares"
+        copy="Our core work is hands-on: attending vessels, installing and repairing systems, and arranging genuine spare parts. Everything is delivered on board by our own field engineers."
       />
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {CAPABILITIES.map((c, i) => (
