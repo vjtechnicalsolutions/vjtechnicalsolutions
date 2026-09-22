@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { BrandMark } from "./Header";
 
 const SYSTEMS_LINKS = [
@@ -57,6 +58,9 @@ export default function Footer() {
                 <a href="mailto:info.vjtechnicalsolutions@gmail.com" className="inline-flex items-center gap-2 text-white transition-colors hover:text-[#5bb7f5]">
                   <Mail className="h-3.5 w-3.5" /> info.vjtechnicalsolutions@gmail.com
                 </a>
+              </li>
+              <li className="inline-flex items-center gap-2 text-[#b9cad8]">
+                <MapPin className="h-3.5 w-3.5" /> Coimbatore, Tamil Nadu, India
               </li>
               <li><Link to="/support" className="transition-colors hover:text-[#5bb7f5]">Vessel Attendance</Link></li>
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>

@@ -1,9 +1,10 @@
-import { Mail, Clock, Globe2, FileText } from "lucide-react";
+import { Mail, Clock, Globe2, FileText, MapPin } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 import { FadeUp } from "@/components/Reveal";
 
 const INFO = [
   { icon: Mail, label: "Email", value: "info.vjtechnicalsolutions@gmail.com", href: "mailto:info.vjtechnicalsolutions@gmail.com" },
+  { icon: MapPin, label: "Location", value: "Coimbatore, Tamil Nadu, India" },
   { icon: Clock, label: "Response", value: "Engineer confirmed within 4 business hours" },
   { icon: Globe2, label: "Coverage", value: "40+ ports, flyaway kit worldwide" },
   { icon: FileText, label: "Documentation", value: "Signed service report after every job", href: "/assets/VJ-Sample-Service-Report.pdf" },
@@ -21,7 +22,7 @@ export default function Quote() {
               Request technical support or a fleet quote.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#61758b]">
-              Share your vessel and job details — the requirement lands directly in our NOC queue for review.
+              Share your vessel and job details — the requirement lands directly in our field coordination queue for review.
             </p>
           </FadeUp>
         </div>

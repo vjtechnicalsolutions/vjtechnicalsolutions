@@ -42,7 +42,7 @@ export default function About() {
           <SectionHeading
             eyebrow="Who We Are"
             title="Hands-on installation & spares for connected operations."
-            copy="VJ Technical Solutions is a field team: vessel attendance, installation, repair, maintenance and spare parts supply. Every job is done on board by our own engineers — with test reports and handover documentation."
+            copy="VJ Technical Solutions is a home-based field team from Coimbatore, Tamil Nadu, India: vessel attendance, installation, repair, maintenance and spare parts supply. Every job is done on board by our own engineers — with test reports and handover documentation."
           />
           <FadeUp delay={0.15}>
             <ul className="mt-8 space-y-3.5">
