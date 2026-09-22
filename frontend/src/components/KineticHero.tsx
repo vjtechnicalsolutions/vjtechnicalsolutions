@@ -86,9 +86,9 @@ export default function KineticHero() {
             className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-[#1e3a5c] pt-7"
           >
             {[
-              { v: STATS.vessels, l: "Attendances completed" },
-              { v: STATS.ports, l: "Ports with engineers" },
-              { v: STATS.watch, l: "Field team on call" },
+              { v: STATS.vessels, l: "Installations done" },
+              { v: STATS.ports, l: "Ports covered" },
+              { v: STATS.watch, l: "Field response" },
             ].map((s) => (
               <div key={s.l}>
                 <p className="font-heading text-2xl font-extrabold text-white sm:text-3xl">{s.v}</p>
