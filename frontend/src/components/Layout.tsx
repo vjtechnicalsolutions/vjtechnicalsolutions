@@ -4,7 +4,6 @@ import Lenis from "lenis";
 import { Toaster } from "@/components/ui/sonner";
 import Header from "./Header";
 import Footer from "./Footer";
-import WhatsAppButton from "./WhatsAppButton";
 
 export default function Layout() {
   const location = useLocation();
@@ -32,7 +31,6 @@ export default function Layout() {
       <Header />
       <main>{<Outlet />}</main>
       <Footer />
-      <WhatsAppButton />
       <Toaster />
     </div>
   );
