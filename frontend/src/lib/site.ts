@@ -27,7 +27,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "Cargo, OSV & superyachts needing high-throughput primary",
     blurb:
       "High-throughput, low-latency LEO broadband. We install, commission and support single and dual flat-HP arrays with masthead obstruction surveys and bonded failover.",
-    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/57d6367349f127349472a3b7e234842588482b7dab88e268bf359817e039755b.jpeg",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/2ebbdca0f4f8c55408950a224dde6545d09b40bf06b8f4dee9330d79f0af1c47.jpeg",
   },
   {
     id: "oneweb",
@@ -347,7 +347,7 @@ export const VJ_IMAGES = {
   hero: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/3f5a94e1d05f73c0e2622ab20bb6ad6e5d3dcb5f149bff206bffaf8ede53c3ab.jpeg",
   flatpanel: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/046b69d91f66c6777aa6ab4a5db103cb2a07d9dfcdca0baa71d7b894ca9e0896.jpeg",
   engineer: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/baf71f709dcfde7210581b0548d8477c02c2b7cf8d21e6b47cf2194dce050651.jpeg",
-  starlinkMounted: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/57d6367349f127349472a3b7e234842588482b7dab88e268bf359817e039755b.jpeg",
+  starlinkMounted: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/2ebbdca0f4f8c55408950a224dde6545d09b40bf06b8f4dee9330d79f0af1c47.jpeg",
   cctvVessel: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/6d2e43237302b6737cb7fed62d0fcb0682c633cd022c9753a75f2daa5cfce278.jpeg",
   mikrotik: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/3f7f6d8e04edc3d9093c882182a057435cd8aa85c2446ef9ed1b362f968c7f91.jpeg",
   cisco: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/5bb2478d8c0c871e8492ca13e9a35928557f8274e3b3d87eddcf35a4c78ff531.jpeg",

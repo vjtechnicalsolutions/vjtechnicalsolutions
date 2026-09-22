@@ -229,7 +229,7 @@ export default function Header() {
 
               <div className="p-6" key={active.id}>
                 <div className="overflow-hidden rounded-xl">
-                  <img src={active.image} alt={active.title} className="h-36 w-full object-cover" />
+                  <img src={active.image} alt={active.title} className="h-48 w-full object-cover" />
                 </div>
                 <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#0876d1]">{active.kicker}</p>
                 <h3 className="mt-1 font-heading text-lg font-bold text-[#071c38]">{active.title}</h3>
