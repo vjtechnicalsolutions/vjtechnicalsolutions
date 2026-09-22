@@ -63,7 +63,7 @@ export default function Footer() {
                 <MapPin className="h-3.5 w-3.5" /> Coimbatore, Tamil Nadu, India
               </li>
               <li>
-                <a href="https://wa.me/917806993126" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#b9cad8] transition-colors hover:text-[#5bb7f5]">
+                <a href="https://wa.me/917806993126" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#b9cad8] transition-colors hover:text-[#5bb7f5]">
                   <MessageCircle className="h-3.5 w-3.5" /> WhatsApp: +91 78069 93126
                 </a>
               </li>
@@ -72,7 +72,6 @@ export default function Footer() {
               <li><Link to="/careers" className="transition-colors hover:text-[#5bb7f5]">Careers</Link></li>
               <li><Link to="/faq" className="transition-colors hover:text-[#5bb7f5]">FAQ</Link></li>
               <li><Link to="/gallery" className="transition-colors hover:text-[#5bb7f5]">Photo Gallery</Link></li>
-              <li><a href="/assets/VJ-Sample-Service-Report.pdf" download className="transition-colors hover:text-[#5bb7f5]">Sample Service Report (PDF)</a></li>
               <li><a href="/assets/VJ-Blank-Service-Report-Delivery-Order.pdf" download className="transition-colors hover:text-[#5bb7f5]">Blank Report Forms (PDF)</a></li>
             </ul>
           </div>
