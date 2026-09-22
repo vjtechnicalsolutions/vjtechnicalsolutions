@@ -248,7 +248,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: "Yachting",
     blurb: "Superyacht-grade bandwidth, crew Wi-Fi and guest experience systems",
-    image: "https://images.unsplash.com/photo-1629736656534-d7b45d4cd8e8?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/695655aaefed01df668f742ecc9ba594fcd97fc007c6eafab0afc1342ae0b225.jpeg",
   },
   {
     name: "Cruise & Ferries",
