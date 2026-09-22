@@ -18,10 +18,10 @@ const TICKS = [
 ];
 
 const STATS_BAND = [
-  { v: "SATCOM", l: "Connectivity Support" },
-  { v: "VESSEL IT", l: "Network & IT Support" },
-  { v: "FIELD", l: "Installation & Attendance" },
-  { v: "24/7", l: "Support Coordination" },
+  { v: "SATCOM", l: "Connectivity Installs" },
+  { v: "VESSEL IT", l: "Network & IT Work" },
+  { v: "SPARES", l: "Genuine Parts Supply" },
+  { v: "24/7", l: "Field Coordination" },
 ];
 
 export default function Home() {
@@ -40,8 +40,8 @@ export default function Home() {
         <div>
           <SectionHeading
             eyebrow="About VJ Technical Solutions"
-            title="Practical technical support for connected operations."
-            copy="We focus on maritime SATCOM, vessel IT and onshore technical services — combining remote troubleshooting with field installation, repair, maintenance and attendance when hands-on support is required."
+            title="Hands-on installation & spares for connected operations."
+            copy="We focus on vessel attendance — installation, repair, maintenance and genuine spare parts — delivered on board by our own field engineers at 40+ ports."
           />
           <FadeUp delay={0.15}>
             <ul className="mt-8 space-y-3.5">

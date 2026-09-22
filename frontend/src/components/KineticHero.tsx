@@ -33,7 +33,7 @@ export default function KineticHero() {
           >
             <span className="ping-dot h-2 w-2 rounded-full bg-[#22c55e]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b9d9f3]">
-              24/7 Maritime NOC · Link Live
+              24/7 Field Response · On Call
             </span>
           </motion.div>
 
@@ -86,9 +86,9 @@ export default function KineticHero() {
             className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-[#1e3a5c] pt-7"
           >
             {[
-              { v: STATS.vessels, l: "Vessels supported" },
+              { v: STATS.vessels, l: "Attendances completed" },
               { v: STATS.ports, l: "Ports with engineers" },
-              { v: STATS.watch, l: "NOC watchkeeping" },
+              { v: STATS.watch, l: "Field team on call" },
             ].map((s) => (
               <div key={s.l}>
                 <p className="font-heading text-2xl font-extrabold text-white sm:text-3xl">{s.v}</p>

@@ -8,8 +8,8 @@ import { SOLUTION_CATEGORIES, STATS } from "@/lib/site";
 const HERO_STATS = [
   { v: STATS.systems, l: "Satellite systems" },
   { v: STATS.ports, l: "Ports covered" },
-  { v: STATS.vessels, l: "Vessels supported" },
-  { v: STATS.watch, l: "NOC support" },
+  { v: STATS.vessels, l: "Attendances done" },
+  { v: STATS.watch, l: "Field coverage" },
 ];
 
 export default function Services() {

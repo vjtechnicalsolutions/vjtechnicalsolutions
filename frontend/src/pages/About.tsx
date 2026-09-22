@@ -5,10 +5,10 @@ import { FadeUp, SectionHeading } from "@/components/Reveal";
 import { STATS as SITE_STATS } from "@/lib/site";
 
 const STATS = [
-  { v: SITE_STATS.vessels, l: "Vessels supported" },
+  { v: SITE_STATS.vessels, l: "Attendances completed" },
   { v: SITE_STATS.systems, l: "Satellite systems certified" },
   { v: SITE_STATS.ports, l: "Ports with field engineers" },
-  { v: SITE_STATS.watch, l: "Support coordination" },
+  { v: SITE_STATS.watch, l: "Field coverage" },
 ];
 
 const BADGES = ["SOLAS", "GMDSS", "IACS UR E26/E27", "ISO 27001-aligned", "Iridium Partner", "KVH Certified"];
@@ -41,8 +41,8 @@ export default function About() {
         <div>
           <SectionHeading
             eyebrow="Who We Are"
-            title="Practical technical support for connected operations."
-            copy="VJ Technical Solutions focuses on maritime SATCOM, vessel IT and onshore technical services. Our approach combines remote troubleshooting with field installation, repair, maintenance and attendance when hands-on support is required."
+            title="Hands-on installation & spares for connected operations."
+            copy="VJ Technical Solutions is a field team: vessel attendance, installation, repair, maintenance and spare parts supply. Every job is done on board by our own engineers — with test reports and handover documentation."
           />
           <FadeUp delay={0.15}>
             <ul className="mt-8 space-y-3.5">

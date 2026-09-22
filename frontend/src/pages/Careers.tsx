@@ -10,9 +10,9 @@ const ROLES = [
   },
   {
     icon: Headset,
-    title: "NOC Support Engineer",
-    location: "Remote · shift rotation",
-    text: "First-line remote diagnostics, link monitoring, failover management and coordination with field teams across time zones.",
+    title: "Service & Spares Coordinator",
+    location: "Office / remote · full-time",
+    text: "Schedule field engineers, arrange spare parts to ports worldwide and keep attendance jobs on track.",
   },
   {
     icon: Video,

@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     q: "Which areas and ports do you cover?",
-    a: "Our field engineers attend vessels at 40+ ports across major shipping routes, and our NOC provides remote support worldwide, 24/7. If your port isn't on the roster we can usually fly an engineer or a flyaway kit in.",
+    a: "Our field engineers attend vessels at 40+ ports across major shipping routes. If your port isn't on the roster we can usually fly an engineer or a flyaway kit in — share the vessel's ETA and we plan around it.",
   },
   {
     q: "How fast can an engineer attend?",

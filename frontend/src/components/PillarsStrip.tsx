@@ -18,8 +18,8 @@ export default function PillarsStrip() {
           />
           <FadeUp delay={0.1}>
             <p className="max-w-sm text-sm leading-relaxed text-[#61758b]">
-              Connectivity, IT, cybersecurity, CCTV and crew welfare — delivered through one team,
-              one contract and one 24/7 NOC.
+              Connectivity, IT, cybersecurity, CCTV and crew welfare — delivered through one team
+              of field engineers and one contract.
             </p>
           </FadeUp>
         </div>
