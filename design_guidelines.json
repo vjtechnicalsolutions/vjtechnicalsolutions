@@ -1,0 +1,263 @@
+{
+  "theme": "dark",
+  "archetype": "THE PERFORMANCE PRO (Maritime Aerospace / Mission-Critical Connectivity)",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#060A10",
+        "on_bg": "#F0F4F8",
+        "on_bg_muted": "#8EA3B7"
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#0D1520",
+        "on_bg": "#F0F4F8",
+        "on_bg_muted": "#7E95AC"
+      },
+      {
+        "name": "card",
+        "kind": "solid",
+        "bg": "#111C2B",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#8EA3B7"
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#F0F4F8",
+        "on_bg": "#060A10",
+        "on_bg_muted": "#334E68"
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#08101A",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(6,10,16,0.75) 0%, rgba(6,10,16,0.92) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#9FB3C8",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#F87171",
+          "success": "#34D399"
+        }
+      },
+      {
+        "name": "glass_header",
+        "kind": "glass",
+        "contrast_against": "#09121D",
+        "guarantee": "backdrop-blur-xl bg-[#060A10]/85 border-b border-[#1E2D3D]",
+        "on_bg": "#F0F4F8",
+        "on_bg_muted": "#8EA3B7"
+      },
+      {
+        "name": "badge_accent",
+        "kind": "solid",
+        "bg": "#0369A1",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#BAE6FD"
+      },
+      {
+        "name": "badge_emerald",
+        "kind": "solid",
+        "bg": "#064E3B",
+        "on_bg": "#6EE7B7",
+        "on_bg_muted": "#A7F3D0"
+      }
+    ],
+    "accent": "#0284C7",
+    "on_accent": "#FFFFFF",
+    "accent_cyan": "#00E5FF",
+    "accent_glow": "rgba(2, 132, 199, 0.25)",
+    "border_subtle": "#1A2634",
+    "border_highlight": "#2A3F55"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Sora, 'Sora Variable', sans-serif",
+      "body": "DM Sans, 'DM Sans Variable', sans-serif",
+      "mono": "JetBrains Mono, 'JetBrains Mono Variable', monospace"
+    },
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "h1_classes": "font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight",
+      "h2_classes": "font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white",
+      "h3_classes": "font-heading text-xl sm:text-2xl font-semibold tracking-tight text-white",
+      "body_classes": "font-sans text-base leading-relaxed text-[#8EA3B7]",
+      "label_classes": "font-mono uppercase tracking-[0.2em] text-xs font-semibold text-[#38BDF8]"
+    }
+  },
+  "entry_surfaces": {
+    "/": "editorial split hero — left: masked kinetic manifesto + live orbital ping indicator + primary quote CTA; right: high-density vessel telemetry card with interactive beam-switcher (Starlink/OneWeb/KVH/Iridium/FBB) over dark ocean backdrop",
+    "/services": "grid layout with technical specs, throughput comparison table, latency benchmarks, and hybrid failover routing topology",
+    "/coverage": "interactive orbital coverage map simulator with LEO vs GEO latency calculator & plan selector",
+    "/about": "numbered engineering manifesto chapters detailing vessel field installations, antenna stabilization, and NOC SLA response",
+    "/news": "editorial intelligence feed with maritime satcom news, Starlink maritime firmware updates, regulatory alerts, and case studies",
+    "/support": "vessel emergency & technical ticket portal with IMO number lookup, priority dispatch toggle, and engineer callout tracking",
+    "/quote": "structured quote builder for fleet owners, superyachts, cargo vessels, and offshore rigs with instant multi-bearer estimation",
+    "/admin": "high-density mission control operations board displaying incoming enquiries, quote requests, active vessel tickets, and system logs"
+  },
+  "navigation": {
+    "header": {
+      "logo": "OCEAN BROADBAND // SATCOM NOC",
+      "type": "fixed crystal glass z-50",
+      "links": [
+        {"name": "Services", "path": "/services"},
+        {"name": "Coverage & Plans", "path": "/coverage"},
+        {"name": "About NOC", "path": "/about"},
+        {"name": "Intelligence", "path": "/news"},
+        {"name": "Support Ticket", "path": "/support"}
+      ],
+      "primary_cta": {"label": "Request Fleet Quote", "path": "/quote"},
+      "secondary_badge": {"label": "NOC LIVE: 99.99% LEO UPTIME", "path": "/admin"}
+    },
+    "footer": {
+      "tagline": "ENGINEERING ZERO-DROPOUT MARITIME SATELLITE ARRAYS GLOBALLY",
+      "big_type": "OCEAN.BROADBAND",
+      "columns": [
+        {
+          "title": "Systems",
+          "links": ["Starlink Maritime LEO", "Eutelsat OneWeb", "KVH TracPhone VSAT", "Iridium Certus 700", "Inmarsat FleetBroadband"]
+        },
+        {
+          "title": "Vessel Classes",
+          "links": ["Commercial Cargo & Tankers", "Offshore Energy & OSV", "Superyachts & Leisure", "Deep Sea Fishing Fleets", "Naval & Patrol Vessels"]
+        },
+        {
+          "title": "Operations",
+          "links": ["24/7 Maritime NOC", "Emergency Flyaway Kits", "Global Port Engineers", "Support Desk Ticket", "Admin Portal"]
+        }
+      ]
+    }
+  },
+  "components_and_sections": [
+    {
+      "name": "KineticHero",
+      "path": "frontend/src/components/KineticHero.tsx",
+      "description": "Bold masked typography reveal with real-time ping simulation, LEO satellite orbital status badge, dual CTA, and interactive multi-bearer telemetry card."
+    },
+    {
+      "name": "EditorialRibbon",
+      "path": "frontend/src/components/EditorialRibbon.tsx",
+      "description": "Slow organic drift marquee ribbon showcasing verified maritime protocols: STARLINK MARITIME • ONEWEB ENTERPRISE • KVH TRACNET • IRIDIUM GMDSS • FLEETBROADBAND 250/500 • BONDED SD-WAN • ZERO LATENCY SPIKES"
+    },
+    {
+      "name": "ServicesMatrix",
+      "path": "frontend/src/components/ServicesMatrix.tsx",
+      "description": "Interactive showcase of the 5 core satcom systems (Starlink, OneWeb, KVH, Iridium Certus, FleetBroadband) with latency meters, hardware dish specs, and use-case selectors."
+    },
+    {
+      "name": "CoverageSimulator",
+      "path": "frontend/src/components/CoverageSimulator.tsx",
+      "description": "Interactive route & coverage selector across North Atlantic, Pacific, Indian Ocean, Arctic & Polar Passages showing active constellation handoffs and plan tiers."
+    },
+    {
+      "name": "EngineerManifesto",
+      "path": "frontend/src/components/EngineerManifesto.tsx",
+      "description": "Numbered technical chapters (01 RF Topology, 02 Gyro-Stabilization, 03 SD-WAN Bonding, 04 SOLAS Compliance) by senior marine communications engineers."
+    },
+    {
+      "name": "QuoteEnquiryForm",
+      "path": "frontend/src/components/QuoteEnquiryForm.tsx",
+      "description": "Full fleet quote estimator storing data to FastAPI backend MongoDB with vessel type, current antenna setup, target bandwidth, and instant confirmation."
+    },
+    {
+      "name": "SupportTicketModal",
+      "path": "frontend/src/components/SupportTicketModal.tsx",
+      "description": "Ticket dispatch system with priority levels (P1 Vessel Dead in Water to P4 General Inquiry), vessel call sign/IMO inputs, and real-time status tracker."
+    },
+    {
+      "name": "AdminDashboard",
+      "path": "frontend/src/components/AdminDashboard.tsx",
+      "description": "Tactical admin command view displaying all incoming quotes, support tickets, vessel fleet statuses, and backend enquiry exports."
+    }
+  ],
+  "image_urls": [
+    {
+      "category": "hero_vessel",
+      "description": "Large container ship sailing on ocean at night under starlit sky with communications illuminated",
+      "url": "https://images.pexels.com/photos/17835642/pexels-photo-17835642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "satellite_antenna_radome",
+      "description": "Ship equipped with advanced radar and satellite dome technology docked at sea",
+      "url": "https://images.unsplash.com/photo-1773161960044-4636c76b22fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwzfHxzYXRlbGxpdGUlMjBkaXNoJTIwdmVzc2VsJTIwbWFyaW5lfGVufDB8fHx8MTc5MDA2MjMyNnww&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "superyacht_offshore",
+      "description": "Luxury yacht cruising open deep blue ocean waters with high-speed connectivity array",
+      "url": "https://images.unsplash.com/photo-1598737285721-29346a5c9278?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHx5YWNodCUyMG9jZWFuJTIwb3BlbiUyMHNlYXxlbnwwfHx8fDE3OTAwNjIzMjZ8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "night_vessel_telemetry",
+      "description": "Cargo vessel at sea with nighttime ocean reflections and navigation arrays",
+      "url": "https://images.unsplash.com/photo-1766678340672-51e6be3a64d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwzfHxjYXJnbyUyMHNoaXAlMjBvY2VhbiUyMG5pZ2h0fGVufDB8fHx8MTc5MDA2MjMyNnww&ixlib=rb-4.1.0&q=85"
+    }
+  ],
+  "motion_and_interactions": {
+    "smooth_scroll": "Lenis smooth scroll integration with customized dampening for ultra-slick momentum",
+    "framer_motion": {
+      "stagger_children": "staggerChildren: 0.12, delayChildren: 0.1",
+      "fade_up": {
+        "initial": {"opacity": 0, "y": 24},
+        "animate": {"opacity": 1, "y": 0},
+        "transition": {"duration": 0.6, "ease": [0.16, 1, 0.3, 1]}
+      },
+      "line_reveal": {
+        "initial": {"clipPath": "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", "y": 20},
+        "animate": {"clipPath": "polygon(0 0, 100% 0, 100% 100%, 0 100%)", "y": 0},
+        "transition": {"duration": 0.8, "ease": [0.16, 1, 0.3, 1]}
+      }
+    },
+    "micro_interactions": [
+      "Hover glow on all tactical tech cards (radial gradient following cursor / subtle border-cyan glow)",
+      "Live ping indicator pulsating every 2.4s to emulate ping packet heartbeat (24ms latency)",
+      "Smooth tab transition on services matrix with active highlight border line",
+      "Animated progress bars on throughput and failover speed tests"
+    ]
+  },
+  "accessibility_and_standards": {
+    "contrast_ratio": "Minimum 4.8:1 for all muted text against #060A10 and #111C2B surfaces; 12:1 for primary headlines",
+    "interactive_targets": "Minimum 44px height/touch target on all buttons, tabs, inputs, and selectors",
+    "prefers_reduced_motion": "Wrap animations with conditional reduced-motion checks or fallback to instant opacity transitions",
+    "testing_attributes": "All inputs, buttons, filters, modal triggers, and status badges MUST include data-testid='...' in kebab-case"
+  },
+  "instructions_to_main_agent": {
+    "template_rules": "farm-ts with FastAPI backend in backend/ and React 19 in frontend/. Store enquiries & support tickets via /api/enquiries and /api/tickets in MongoDB with full mock fallback when backend is unreachable.",
+    "theme_setup": "Dark mode by default in index.html (ensure class='dark' on html element). Import @fontsource-variable/sora and @fontsource-variable/dm-sans in index.css.",
+    "branding": "Brand Name: 'OCEAN BROADBAND' - Sub: Maritime Satellite & Orbital Communications. High-end, technical, authoritative, with live NOC aesthetic.",
+    "data_testid_checklist": [
+      "data-testid='nav-brand-logo'",
+      "data-testid='nav-link-services'",
+      "data-testid='nav-link-coverage'",
+      "data-testid='nav-link-about'",
+      "data-testid='nav-link-news'",
+      "data-testid='nav-link-support'",
+      "data-testid='nav-cta-quote'",
+      "data-testid='hero-service-selector'",
+      "data-testid='hero-cta-quote'",
+      "data-testid='hero-cta-coverage'",
+      "data-testid='service-tab-starlink'",
+      "data-testid='service-tab-oneweb'",
+      "data-testid='service-tab-kvh'",
+      "data-testid='service-tab-iridium'",
+      "data-testid='service-tab-fleetbroadband'",
+      "data-testid='quote-form-name-input'",
+      "data-testid='quote-form-email-input'",
+      "data-testid='quote-form-vessel-input'",
+      "data-testid='quote-form-system-select'",
+      "data-testid='quote-form-submit-button'",
+      "data-testid='support-ticket-submit-button'",
+      "data-testid='admin-view-toggle'"
+    ]
+  }
+}
