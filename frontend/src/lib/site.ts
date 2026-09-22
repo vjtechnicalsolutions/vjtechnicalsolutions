@@ -282,7 +282,7 @@ export const INDUSTRIES: Industry[] = [
   },
 ];
 
-export const STATS = { vessels: "350+", ports: "40+", systems: "5", watch: "24/7" };
+export const STATS = { vessels: "50+", ports: "40+", systems: "5", watch: "24/7" };
 
 export interface Product {
   name: string;

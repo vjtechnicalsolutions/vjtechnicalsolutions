@@ -30,7 +30,7 @@ export default function EngineerManifesto() {
         <SectionHeading
           dark
           eyebrow="The Engineering Manifesto"
-          title="How we keep 350+ hulls online"
+          title="How we keep every hull online"
           copy="Written by senior marine communications engineers, tested in salt water."
         />
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-[#1e3a5c] bg-[#1e3a5c] md:grid-cols-2">
