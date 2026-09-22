@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Activity, Signal, ArrowUpDown } from "lucide-react";
+import { ArrowRight, Activity, Signal, ArrowUpDown, Star } from "lucide-react";
 import { MaskedLine } from "./Reveal";
 import { SYSTEMS, STATS, VJ_IMAGES } from "@/lib/site";
 
@@ -95,6 +95,22 @@ export default function KineticHero() {
                 <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7d99b5]">{s.l}</p>
               </div>
             ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.25 }}
+            className="mt-7 inline-flex items-center gap-3 rounded-full border border-[#1e3a5c] bg-[#0a2547]/80 px-5 py-2.5"
+            data-testid="hero-rating"
+          >
+            <span className="flex gap-0.5 text-[#fbbf24]">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="h-4 w-4 fill-current" />
+              ))}
+            </span>
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c7d5e2]">
+              4.9 / 5 rated by fleet operators
+            </span>
           </motion.div>
         </div>
 

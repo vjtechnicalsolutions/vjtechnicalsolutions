@@ -9,7 +9,7 @@ const LINKS = [
   { name: "Coverage", path: "/coverage", testid: "nav-link-coverage" },
   { name: "About", path: "/about", testid: "nav-link-about" },
   { name: "Intelligence", path: "/news", testid: "nav-link-news" },
-  { name: "Support", path: "/support", testid: "nav-link-support" },
+  { name: "Attendance", path: "/support", testid: "nav-link-support" },
 ];
 
 interface MegaCategory {
@@ -60,10 +60,11 @@ const MEGA: MegaCategory[] = [
     image: "https://images.unsplash.com/photo-1589935447067-5531094415d1?crop=entropy&cs=srgb&fm=jpg&q=85",
     explore: "/services",
     links: [
-      { name: "Marine CCTV & Security", path: "/services" },
+      { name: "Marine CCTV & Security", path: "/solutions/cctv" },
+      { name: "Spare Parts Supply", path: "/solutions/spares" },
       { name: "Commissioning & Testing", path: "/services" },
       { name: "GMDSS Compliance", path: "/services" },
-      { name: "Remote Monitoring", path: "/support" },
+      { name: "Emergency Attendance", path: "/support" },
     ],
   },
   {
@@ -76,8 +77,8 @@ const MEGA: MegaCategory[] = [
     links: [
       { name: "Crew Wi-Fi with Quotas", path: "/services" },
       { name: "VoIP & Calling", path: "/services" },
-      { name: "24/7 Support Desk", path: "/support" },
-      { name: "Request Attendance", path: "/quote" },
+      { name: "Vessel Attendance", path: "/support" },
+      { name: "Request Quote", path: "/quote" },
     ],
   },
   {

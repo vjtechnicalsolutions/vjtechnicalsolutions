@@ -47,6 +47,7 @@ export default function Footer() {
                   <Link to="/services" className="transition-colors hover:text-[#5bb7f5]">{s}</Link>
                 </li>
               ))}
+              <li><Link to="/solutions/spares" className="transition-colors hover:text-[#5bb7f5]">Spare Parts Supply</Link></li>
             </ul>
           </div>
           <div>
@@ -57,7 +58,7 @@ export default function Footer() {
                   <Mail className="h-3.5 w-3.5" /> info.vjtechnicalsolutions@gmail.com
                 </a>
               </li>
-              <li><Link to="/support" className="transition-colors hover:text-[#5bb7f5]">24/7 Support Desk</Link></li>
+              <li><Link to="/support" className="transition-colors hover:text-[#5bb7f5]">Vessel Attendance</Link></li>
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>
               <li><Link to="/careers" className="transition-colors hover:text-[#5bb7f5]">Careers</Link></li>
               <li><Link to="/faq" className="transition-colors hover:text-[#5bb7f5]">FAQ</Link></li>

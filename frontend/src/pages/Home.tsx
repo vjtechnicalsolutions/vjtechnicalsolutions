@@ -14,7 +14,7 @@ const TICKS = [
   "Maritime SATCOM & vessel IT support",
   "Onboard installation and troubleshooting",
   "Port attendance and field engineering",
-  "Network, firewall, CCTV and connectivity support",
+  "Genuine spare parts delivered to your next port",
 ];
 
 const STATS_BAND = [

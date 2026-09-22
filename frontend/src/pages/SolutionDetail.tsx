@@ -1,35 +1,58 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Check, Zap, Gauge, Globe2, ShieldCheck, Settings, Download, Upload, Timer, Antenna } from "lucide-react";
 import { SYSTEMS, SOLUTION_DETAILS } from "@/lib/site";
+import { EXTRA_SOLUTIONS } from "@/lib/extra-solutions";
 import { FadeUp, SectionHeading } from "@/components/Reveal";
 
 const FEATURE_ICONS = [Zap, Gauge, Globe2, ShieldCheck, Settings];
+const SPEC_ICONS = [Antenna, Gauge, Globe2, ShieldCheck];
+
+interface Spec {
+  icon: typeof Antenna;
+  label: string;
+  value: string;
+}
 
 export default function SolutionDetail() {
   const { systemId } = useParams<{ systemId: string }>();
   const system = SYSTEMS.find((s) => s.id === systemId);
   const detail = systemId ? SOLUTION_DETAILS[systemId] : undefined;
+  const extra = systemId ? EXTRA_SOLUTIONS[systemId] : undefined;
+
+  if (extra) {
+    return <SolutionPage name={extra.name} tag={extra.tag} image={extra.image} eyebrow={extra.eyebrow} intro={extra.intro} features={extra.features} benefits={extra.benefits} useCases={extra.useCases} cta={extra.cta} specs={extra.specs.map((s, i) => ({ icon: SPEC_ICONS[i % SPEC_ICONS.length], ...s }))} testid={`solution-detail-${extra.id}`} />;
+  }
 
   if (!system || !detail) return <Navigate to="/services" replace />;
 
-  const specs = [
+  const specs: Spec[] = [
     { icon: Download, label: "Download", value: system.down < 1 ? `up to ${system.down * 1000} kbps` : `up to ${system.down} Mbps` },
     { icon: Upload, label: "Upload", value: system.up < 1 ? `up to ${system.up * 1000} kbps` : `up to ${system.up} Mbps` },
     { icon: Timer, label: "Latency", value: system.latencyMs < 100 ? `< ${system.latencyMs + 64} ms` : `~${system.latencyMs} ms` },
     { icon: Antenna, label: "Hardware", value: system.antenna },
   ];
 
+  return <SolutionPage name={system.name} tag={system.tag} image={system.image} eyebrow={detail.eyebrow} intro={detail.intro} features={detail.features} benefits={detail.benefits} useCases={detail.useCases} cta={detail.cta} specs={specs} testid={`solution-detail-${system.id}`} />;
+}
+
+function SolutionPage({
+  name, tag, image, eyebrow, intro, features, benefits, useCases, cta, specs, testid,
+}: {
+  name: string; tag: string; image: string; eyebrow: string; intro: string;
+  features: string[]; benefits: string[]; useCases: { title: string; text: string }[];
+  cta: string; specs: Spec[]; testid: string;
+}) {
   return (
     <>
       <section className="relative overflow-hidden border-b border-[#dce6ef] bg-[#f5f8fb] pt-[76px]">
         <div className="absolute inset-0 bg-grid-light" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-24" data-testid={`solution-detail-${system.id}`}>
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-24" data-testid={testid}>
           <FadeUp>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#0876d1]">{detail.eyebrow}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#0876d1]">{eyebrow}</p>
             <h1 className="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-[#071c38] sm:text-5xl">
-              {system.name} Solutions for Your Vessel
+              {name} Solutions for Your Vessel
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[#61758b]">{detail.intro}</p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-[#61758b]">{intro}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/quote"
@@ -50,12 +73,12 @@ export default function SolutionDetail() {
           <FadeUp delay={0.12}>
             <div className="group relative overflow-hidden rounded-2xl border border-[#dce6ef] shadow-[0_16px_48px_rgba(7,31,55,0.12)]">
               <img
-                src={system.image}
-                alt={`${system.name} hardware`}
+                src={image}
+                alt={`${name} hardware`}
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071c38]/85 to-transparent p-5">
-                <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#5bb7f5]">{system.tag}</p>
+                <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#5bb7f5]">{tag}</p>
               </div>
             </div>
           </FadeUp>
@@ -63,9 +86,9 @@ export default function SolutionDetail() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <SectionHeading eyebrow="Key Features" title={`What ${system.name} delivers`} />
+        <SectionHeading eyebrow="Key Features" title={`What ${name} delivers`} />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {detail.features.map((f, i) => {
+          {features.map((f, i) => {
             const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length];
             return (
               <FadeUp key={f} delay={i * 0.05}>
@@ -83,7 +106,7 @@ export default function SolutionDetail() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionHeading dark eyebrow="Benefits for Customers" title="What changes onboard" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {detail.benefits.map((b, i) => (
+            {benefits.map((b, i) => (
               <FadeUp key={b} delay={i * 0.05}>
                 <div className="flex items-start gap-3.5 rounded-xl border border-[#1e3a5c] bg-[#0a2547] p-5">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0876d1]/25">
@@ -116,7 +139,7 @@ export default function SolutionDetail() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionHeading eyebrow="Use Cases" title="Where we deploy it" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {detail.useCases.map((u, i) => (
+            {useCases.map((u, i) => (
               <FadeUp key={u.title} delay={i * 0.05}>
                 <div className="h-full rounded-xl border border-[#dce6ef] bg-white p-6 shadow-[0_8px_28px_rgba(7,31,55,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0876d1]/50">
                   <h3 className="font-heading text-base font-bold text-[#071c38]">{u.title}</h3>
@@ -132,7 +155,7 @@ export default function SolutionDetail() {
         <div className="mx-auto max-w-7xl px-5 py-20 text-center lg:px-8">
           <FadeUp>
             <h2 className="mx-auto max-w-2xl font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              {detail.cta}
+              {cta}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-[#b9cad8]">
               Discuss the best connectivity solution for your fleet or remote operations.

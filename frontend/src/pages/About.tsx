@@ -46,7 +46,7 @@ export default function About() {
           />
           <FadeUp delay={0.15}>
             <ul className="mt-8 space-y-3.5">
-              {["Maritime SATCOM & vessel IT support", "Onboard installation and troubleshooting", "Port attendance and field engineering", "Network, firewall, CCTV and connectivity support"].map((t) => (
+              {["Maritime SATCOM & vessel IT support", "Onboard installation and troubleshooting", "Port attendance and field engineering", "Marine equipment & spare parts supply"].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-sm font-semibold text-[#102d52]">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#eaf4ff]">
                     <Check className="h-3.5 w-3.5 text-[#0876d1]" />

@@ -13,8 +13,8 @@ const FAQS = [
     a: "Our field engineers attend vessels at 40+ ports across major shipping routes, and our NOC provides remote support worldwide, 24/7. If your port isn't on the roster we can usually fly an engineer or a flyaway kit in.",
   },
   {
-    q: "How fast do you respond to a breakdown?",
-    a: "By priority: P1 (vessel dead in the water) gets an immediate 24/7 engineer response, P2 (primary link down) under 1 hour, P3 (degraded service) the same business day, and P4 (general inquiries) the next business day.",
+    q: "How fast can an engineer attend?",
+    a: "For scheduled port calls we confirm an engineer within 4 business hours of your request. Emergency flyaway attendance depends on the next port and travel connections — share the vessel's ETA and we plan around it.",
   },
   {
     q: "How is pricing calculated?",

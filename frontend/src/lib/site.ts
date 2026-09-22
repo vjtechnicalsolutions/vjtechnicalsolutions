@@ -41,7 +41,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "Fleets needing contracted CIR and enterprise SLAs",
     blurb:
       "Enterprise-grade LEO with committed information rates and strong high-latitude performance. Ideal as a managed primary or as a dual-LEO pair with Starlink.",
-    image: "https://images.unsplash.com/photo-1773161960044-4636c76b22fc?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/dc6d0b9ee25edc64c52dcc8d14bbf16b0483b37721787497450bda6ebe653eda.jpeg",
   },
   {
     id: "kvh",
@@ -55,7 +55,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "Proven metered failover and existing dome fleets",
     blurb:
       "The workhorse GEO layer. We re-role existing TracPhone domes as managed secondary bearers under SD-WAN control instead of ripping out working hardware.",
-    image: "https://images.pexels.com/photos/19089153/pexels-photo-19089153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/e6c88ebb6cd6b75c0b87fa1c14e2f891770879995c3ea786f1deb1c0f2175c07.jpeg",
   },
   {
     id: "iridium",
@@ -69,7 +69,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "GMDSS safety services and true polar coverage",
     blurb:
       "Truly global L-band safety and operational broadband — the only bearer that works at the poles. Our refit programmes pass radio survey first time, every time.",
-    image: "https://images.unsplash.com/photo-1758248421325-6f3a1d92075a?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/ca1f60fc0195c20370549f5bda71d5ed16b9d3131ab533e10769fe091bf885cd.jpeg",
   },
   {
     id: "fleetbroadband",
@@ -83,7 +83,7 @@ export const SYSTEMS: SatSystem[] = [
     bestFor: "Legacy GMDSS compliance and voice continuity",
     blurb:
       "FBB 250/500 remains the compliance backbone on thousands of hulls. We maintain, migrate and consolidate FBB estates as fleets move primary traffic to LEO.",
-    image: "https://images.pexels.com/photos/32630439/pexels-photo-32630439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/c5712ceaf77479643689033e9eeaa39d7da9238c1a089218a4f7354f09901e24.jpeg",
   },
 ];
 
@@ -167,7 +167,7 @@ export const FALLBACK_POSTS: Post[] = [
       "The latest Starlink Maritime firmware roll-out changes obstructed-view handling and priority data queues. Here is the field checklist we run before and after every upgrade.",
     body: "Starlink's latest maritime firmware wave adjusts how flat high-performance terminals handle partial obstructions and priority queueing.\n\nBefore upgrading we recommend a full config backup, a masthead obstruction survey, and a scheduled changeover window at anchor or in port.\n\nAfter the upgrade, validate failover to your secondary bearer and re-run speed tests on both bonded paths.",
     category: "Fleet Alert",
-    image: "https://images.unsplash.com/photo-1756573346001-6c3ab30e837b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/2ebbdca0f4f8c55408950a224dde6545d09b40bf06b8f4dee9330d79f0af1c47.jpeg",
     read_minutes: 5,
     created_at: "2026-06-24T09:00:00Z",
   },
@@ -179,7 +179,7 @@ export const FALLBACK_POSTS: Post[] = [
       "A single bearer is a single point of failure. How we bond Starlink or OneWeb with Ku/Ka VSAT and Iridium Certus so crews never notice a handoff.",
     body: "Modern vessels carry two to four bearers: LEO, GEO VSAT and L-band safety services.\n\nUsing SD-WAN bonding at the router level, traffic flows across the lowest-latency path while session persistence keeps VoIP and ECDIS updates alive during handoffs.\n\nReference topology: dual routers, per-bearer health probes, and automatic QoS re-marking on degradation.",
     category: "Engineering",
-    image: "https://images.pexels.com/photos/32630439/pexels-photo-32630439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/046b69d91f66c6777aa6ab4a5db103cb2a07d9dfcdca0baa71d7b894ca9e0896.jpeg",
     read_minutes: 7,
     created_at: "2026-06-10T09:00:00Z",
   },
@@ -191,7 +191,7 @@ export const FALLBACK_POSTS: Post[] = [
       "Twelve offshore support vessels, one winter, zero missed survey windows. Field notes on Certus 700 installs, antenna placement, and GMDSS compliance.",
     body: "Certus 700 gives offshore fleets a genuine broadband fallback with truly global coverage, including polar regions.\n\nKey lessons: keep the above-deck unit clear of radar sweep arcs, run dual shielded cable, and document the GMDSS console integration for surveyors.\n\nEvery vessel passed radio survey on first inspection.",
     category: "Case Study",
-    image: "https://images.pexels.com/photos/36511255/pexels-photo-36511255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/ca1f60fc0195c20370549f5bda71d5ed16b9d3131ab533e10769fe091bf885cd.jpeg",
     read_minutes: 6,
     created_at: "2026-05-28T09:00:00Z",
   },
@@ -203,7 +203,7 @@ export const FALLBACK_POSTS: Post[] = [
       "OneWeb's enterprise-grade SLAs and high-latitude performance make it the right primary bearer for specific routes. Our honest comparison from live installs.",
     body: "OneWeb is not a Starlink clone. Its enterprise SLA structure, committed information rates and high-latitude performance suit tankers and Arctic itineraries.\n\nWhere Starlink wins on price and raw throughput, OneWeb wins on contract guarantees.\n\nMany of our clients run both, bonded.",
     category: "Analysis",
-    image: "https://images.unsplash.com/photo-1773161960044-4636c76b22fc?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/dc6d0b9ee25edc64c52dcc8d14bbf16b0483b37721787497450bda6ebe653eda.jpeg",
     read_minutes: 6,
     created_at: "2026-05-12T09:00:00Z",
   },
@@ -215,7 +215,7 @@ export const FALLBACK_POSTS: Post[] = [
       "Vessels span hundreds of meters with stretched crews. AI-assisted CCTV with onboard analytics now watches blind spots, mooring lines and engine spaces around the clock.",
     body: "Modern marine CCTV is no longer a recorder in the corner — it is an operational sensor network.\n\nWe design IP camera systems with marinised housings, onboard NVR storage, and analytics for man-overboard zones, unauthorised access and tow-line monitoring.\n\nFootage is synced to shore over the bonded link when bandwidth allows, giving fleet managers live situational awareness.",
     category: "Security",
-    image: "https://images.unsplash.com/photo-1589935447067-5531094415d1?crop=entropy&cs=srgb&fm=jpg&q=85",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/6d2e43237302b6737cb7fed62d0fcb0682c633cd022c9753a75f2daa5cfce278.jpeg",
     read_minutes: 6,
     created_at: "2026-04-30T09:00:00Z",
   },
@@ -227,7 +227,7 @@ export const FALLBACK_POSTS: Post[] = [
       "You do not have to rip out the dome. How we re-role KVH VSAT as a managed secondary bearer while LEO carries primary traffic.",
     body: "KVH VSAT contracts often run for years. Ripping out working hardware wastes money and removes a proven failover path.\n\nOur migration pattern: install the LEO terminal as primary, reconfigure the TracPhone as a metered secondary, and let the SD-WAN router steer traffic by cost and latency.\n\nTypical result: 10x throughput with zero increase in airtime spend.",
     category: "Migration",
-    image: "https://images.pexels.com/photos/19089153/pexels-photo-19089153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "https://static.prod-images.emergentagent.com/jobs/e1e3194f-4ae3-4d74-9184-a90288057005/images/e6c88ebb6cd6b75c0b87fa1c14e2f891770879995c3ea786f1deb1c0f2175c07.jpeg",
     read_minutes: 5,
     created_at: "2026-04-15T09:00:00Z",
   },
@@ -309,7 +309,7 @@ export const SOLUTION_CATEGORIES: SolutionCategory[] = [
       { name: "Iridium Certus", tagline: "True global fallback via Iridium's L-band network.", bullets: ["Coverage including the poles", "Mission-critical fallback link", "Voice and data on one platform"], path: "/solutions/iridium" },
       { name: "VSAT (Ku / Ka) — KVH", tagline: "Proven GEO backbone for ocean-scale, predictable bandwidth.", bullets: ["Wide-area ocean coverage", "Stable backbone for routine data", "Cost-effective metered plans"], path: "/solutions/kvh" },
       { name: "FleetBroadband", tagline: "Inmarsat FBB for voice, data and safety on all vessel sizes.", bullets: ["Class 250 and 500 terminals", "Simultaneous voice and data", "GMDSS-compliant safety channel"], path: "/solutions/fleetbroadband" },
-      { name: "LTE / 4G Hybrid", tagline: "Automatic port-side LTE offload to reduce satellite spend.", bullets: ["SIM-based automatic offload", "Reduces VSAT consumption near shore", "Integrated via SD-WAN routing"], path: "/quote" },
+      { name: "LTE / 4G Hybrid", tagline: "Automatic port-side LTE offload to reduce satellite spend.", bullets: ["SIM-based automatic offload", "Reduces VSAT consumption near shore", "Integrated via SD-WAN routing"], path: "/solutions/lte" },
     ],
   },
   {
@@ -327,7 +327,7 @@ export const SOLUTION_CATEGORIES: SolutionCategory[] = [
     label: "Crew Engagement",
     tagline: "Connectivity, wellbeing and communication solutions for seafarers",
     products: [
-      { name: "Crew Wi-Fi & Quotas", tagline: "Fair, managed internet access that protects operations.", bullets: ["Captive portal vouchers", "Per-crew bandwidth quotas", "Usage reporting to shore"], path: "/quote" },
+      { name: "Crew Wi-Fi & Quotas", tagline: "Fair, managed internet access that protects operations.", bullets: ["Captive portal vouchers", "Per-crew bandwidth quotas", "Usage reporting to shore"], path: "/solutions/crew-wifi" },
       { name: "VoIP & DID Calling", tagline: "Direct numbers for crew and officers reachable from shore.", bullets: ["VoIP over satellite", "Individual DID per officer", "QoS-managed call quality"], path: "/quote" },
     ],
   },
@@ -336,9 +336,10 @@ export const SOLUTION_CATEGORIES: SolutionCategory[] = [
     label: "Operational Technologies",
     tagline: "Surveillance, safety and commissioning systems for daily operations",
     products: [
-      { name: "Marine CCTV & Security", tagline: "AI-ready IP surveillance with shore-side viewing.", bullets: ["Marinised camera housings", "Onboard NVR storage", "Low-bandwidth remote viewing"], path: "/quote" },
+      { name: "Marine CCTV & Security", tagline: "AI-ready IP surveillance with shore-side viewing.", bullets: ["Marinised camera housings", "Onboard NVR storage", "Low-bandwidth remote viewing"], path: "/solutions/cctv" },
       { name: "Installation & Repair", tagline: "Our core field work — attendance, install and fault restoration.", bullets: ["Port attendance at 40+ ports", "Underway fault diagnosis", "Flyaway kit deployment"], path: "/quote" },
       { name: "GMDSS & Commissioning", tagline: "Survey-ready safety comms and system handover.", bullets: ["Radio survey documentation", "Commissioning and sea trials", "Certified test reports"], path: "/quote" },
+      { name: "Marine Spare Parts", tagline: "Genuine spares delivered to your vessel's next port.", bullets: ["OEM parts for all five systems", "Dispatch within 24–72 hours", "Customs & logistics handled"], path: "/solutions/spares" },
     ],
   },
 ];
@@ -499,5 +500,6 @@ export const SYSTEM_OPTIONS = [
   "Vessel IT / Networking",
   "CCTV / Security",
   "Firewall / Cybersecurity",
+  "Spare Parts / Equipment",
   "Other",
 ];

@@ -11,8 +11,8 @@ const CAPABILITIES = [
   },
   {
     icon: Headset,
-    title: "Remote Technical Support",
-    text: "Remote diagnostics, logs, system checks and coordination with technical teams, 24/7.",
+    title: "Pre-Attendance Diagnosis",
+    text: "Remote log checks and diagnostics so the right engineer, parts and kit arrive on board first time.",
     image: "https://images.pexels.com/photos/3582597/pexels-photo-3582597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
@@ -41,8 +41,8 @@ const CAPABILITIES = [
   },
   {
     icon: Radio,
-    title: "Marine Equipment",
-    text: "Marine IT, networking, connectivity equipment and accessories for operational needs.",
+    title: "Marine Equipment & Spares",
+    text: "Marine IT, networking and connectivity equipment — plus genuine spare parts delivered to your next port.",
     image: "https://images.unsplash.com/photo-1770471656503-cc6bb924a459?crop=entropy&cs=srgb&fm=jpg&q=85",
   },
   {
