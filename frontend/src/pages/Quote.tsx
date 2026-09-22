@@ -3,7 +3,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import { FadeUp } from "@/components/Reveal";
 
 const INFO = [
-  { icon: Mail, label: "Email", value: "info@vjtechnicalsolutions.com", href: "mailto:info@vjtechnicalsolutions.com" },
+  { icon: Mail, label: "Email", value: "info.vjtechnicalsolutions@gmail.com", href: "mailto:info.vjtechnicalsolutions@gmail.com" },
   { icon: Clock, label: "Response", value: "Within 4 business hours, 24/7 for P1" },
   { icon: Globe2, label: "Coverage", value: "40+ ports, global remote support" },
 ];
@@ -45,7 +45,7 @@ export default function Quote() {
               </div>
             ))}
             <div className="relative overflow-hidden rounded-xl border border-[#dce6ef]">
-              <img src="/assets/maritime-service-scene.png" alt="Engineers at work on a vessel" className="aspect-[16/9] w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1780337671440-3affaa1beac9?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Vessel mast with radar dome and antennas" className="aspect-[16/9] w-full object-cover" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071c38]/90 to-transparent p-5">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#5bb7f5]">Field team on attendance</p>
               </div>

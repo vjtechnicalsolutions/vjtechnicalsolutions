@@ -8,6 +8,8 @@ import About from "@/pages/About";
 import News from "@/pages/News";
 import Support from "@/pages/Support";
 import Quote from "@/pages/Quote";
+import Careers from "@/pages/Careers";
+import Faq from "@/pages/Faq";
 import Admin from "@/pages/Admin";
 import AuthCallback from "@/pages/AuthCallback";
 
@@ -27,6 +29,8 @@ function AppRouter() {
         <Route path="/news" element={<News />} />
         <Route path="/support" element={<Support />} />
         <Route path="/quote" element={<Quote />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Home />} />
       </Route>

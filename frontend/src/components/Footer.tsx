@@ -47,12 +47,14 @@ export default function Footer() {
             <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">Operations</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-[#b9cad8]">
               <li>
-                <a href="mailto:info@vjtechnicalsolutions.com" className="inline-flex items-center gap-2 text-white transition-colors hover:text-[#5bb7f5]">
-                  <Mail className="h-3.5 w-3.5" /> info@vjtechnicalsolutions.com
+                <a href="mailto:info.vjtechnicalsolutions@gmail.com" className="inline-flex items-center gap-2 text-white transition-colors hover:text-[#5bb7f5]">
+                  <Mail className="h-3.5 w-3.5" /> info.vjtechnicalsolutions@gmail.com
                 </a>
               </li>
               <li><Link to="/support" className="transition-colors hover:text-[#5bb7f5]">24/7 Support Desk</Link></li>
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>
+              <li><Link to="/careers" className="transition-colors hover:text-[#5bb7f5]">Careers</Link></li>
+              <li><Link to="/faq" className="transition-colors hover:text-[#5bb7f5]">FAQ</Link></li>
               <li><Link to="/admin" className="transition-colors hover:text-[#5bb7f5]">NOC Admin Portal</Link></li>
             </ul>
           </div>

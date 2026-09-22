@@ -64,7 +64,7 @@ export default function Home() {
         <FadeUp delay={0.1}>
           <div className="group relative overflow-hidden rounded-2xl border border-[#dce6ef] shadow-[0_16px_48px_rgba(7,31,55,0.1)]">
             <img
-              src="/assets/maritime-radome-technician.png"
+              src="https://images.pexels.com/photos/36511255/pexels-photo-36511255.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               alt="Field engineer servicing a vessel radome"
               className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -85,7 +85,7 @@ export default function Home() {
                 <div
                   className="relative flex h-36 items-end overflow-hidden rounded-xl border border-[#dce6ef] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(7,31,55,0.18)]"
                   style={{
-                    backgroundImage: "linear-gradient(160deg, rgba(7,28,56,0.85), rgba(8,118,209,0.45)), url(/assets/maritime-service-scene.png)",
+                    backgroundImage: "linear-gradient(160deg, rgba(7,28,56,0.85), rgba(8,118,209,0.45)), url(https://images.pexels.com/photos/32630439/pexels-photo-32630439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -135,10 +135,10 @@ export default function Home() {
                 Request Service <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="mailto:info@vjtechnicalsolutions.com"
+                href="mailto:info.vjtechnicalsolutions@gmail.com"
                 className="inline-flex items-center rounded-lg border border-white/60 px-7 py-4 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#071c38]"
               >
-                info@vjtechnicalsolutions.com
+                info.vjtechnicalsolutions@gmail.com
               </a>
             </div>
           </FadeUp>

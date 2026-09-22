@@ -1,12 +1,24 @@
-import { Satellite, Network, ShieldCheck, Wrench, Headset, Radio, Video, BadgeCheck } from "lucide-react";
+import { Wrench, Headset, Satellite, Network, Video, ShieldCheck, Radio, BadgeCheck } from "lucide-react";
 import { FadeUp, SectionHeading } from "./Reveal";
 
 const CAPABILITIES = [
   {
+    icon: Wrench,
+    title: "Installation & Repair",
+    text: "Onboard installation, replacement, commissioning, maintenance and fault restoration — our core field work.",
+    image: "https://images.pexels.com/photos/19089153/pexels-photo-19089153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    icon: Headset,
+    title: "Remote Technical Support",
+    text: "Remote diagnostics, logs, system checks and coordination with technical teams, 24/7.",
+    image: "https://images.pexels.com/photos/3582597/pexels-photo-3582597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
     icon: Satellite,
     title: "Satellite Connectivity",
     text: "Starlink Maritime, VSAT/KVH, OneWeb, Iridium Certus and hybrid connectivity support.",
-    image: "/assets/maritime-radome-sunset.png",
+    image: "https://images.unsplash.com/photo-1773161960044-4636c76b22fc?crop=entropy&cs=srgb&fm=jpg&q=85",
   },
   {
     icon: Network,
@@ -27,22 +39,10 @@ const CAPABILITIES = [
     image: "https://images.unsplash.com/photo-1608936511952-11bd2edde695?crop=entropy&cs=srgb&fm=jpg&q=85",
   },
   {
-    icon: Wrench,
-    title: "Installation & Repair",
-    text: "Onboard installation, replacement, commissioning, maintenance and fault restoration.",
-    image: "/assets/maritime-radome-technician.png",
-  },
-  {
-    icon: Headset,
-    title: "Remote Technical Support",
-    text: "Remote diagnostics, logs, system checks and coordination with technical teams.",
-    image: "https://images.pexels.com/photos/3582597/pexels-photo-3582597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  },
-  {
     icon: Radio,
     title: "Marine Equipment",
     text: "Marine IT, networking, connectivity equipment and accessories for operational needs.",
-    image: "/assets/maritime-service-scene.png",
+    image: "https://images.unsplash.com/photo-1770471656503-cc6bb924a459?crop=entropy&cs=srgb&fm=jpg&q=85",
   },
   {
     icon: BadgeCheck,
@@ -57,8 +57,8 @@ export default function CapabilitiesGrid() {
     <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
       <SectionHeading
         eyebrow="Our Capabilities"
-        title="Technical solutions for maritime & onshore operations"
-        copy="Reliable field and technical support across connectivity, IT, networking, security, installation and maintenance."
+        title="Vessel attendance & repair first — backed by full technical depth"
+        copy="Our core work is hands-on: attending vessels, installing and repairing systems in port and underway. Around that, we cover connectivity, IT, networking, security and equipment."
       />
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {CAPABILITIES.map((c, i) => (

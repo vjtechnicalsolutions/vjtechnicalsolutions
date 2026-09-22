@@ -1,6 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { format } from "date-fns";
-import { LogOut, RefreshCw, Inbox, LifeBuoy, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { LogOut, RefreshCw, Inbox, LifeBuoy, Loader2, CheckCheck, Undo2 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { FadeUp } from "@/components/Reveal";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -39,16 +40,62 @@ async function authedGet<T,>(path: string): Promise<T> {
   return (await res.json()) as T;
 }
 
+function statusBadge(s: string): string {
+  if (s === "RESOLVED") return "bg-[#e7f6ee] text-[#15803d]";
+  if (s === "IN_PROGRESS") return "bg-[#eaf4ff] text-[#0876d1]";
+  return "bg-[#fffbeb] text-[#b45309]";
+}
+
 export default function Admin() {
   const { user, loading, setUser } = useAuth();
+  const queryClient = useQueryClient();
 
   const enquiries = useQuery({ queryKey: ["admin-enquiries"], queryFn: () => authedGet<Enquiry[]>("/enquiries"), enabled: !!user, retry: false });
   const tickets = useQuery({ queryKey: ["admin-tickets"], queryFn: () => authedGet<Ticket[]>("/tickets"), enabled: !!user, retry: false });
+
+  const statusMutation = useMutation({
+    mutationFn: async ({ kind, id, status }: { kind: "enquiries" | "tickets"; id: string; status: string }) => {
+      const res = await fetch(`/api/${kind}/${id}/status`, {
+        method: "PATCH",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      });
+      if (!res.ok) throw new Error(`status update failed with ${res.status}`);
+      return res.json();
+    },
+    onSuccess: (_data, vars) => {
+      queryClient.invalidateQueries({ queryKey: [`admin-${vars.kind}`] });
+      toast.success(`Marked as ${vars.status === "RESOLVED" ? "resolved" : "reopened"}.`);
+    },
+    onError: () => toast.error("Status update failed."),
+  });
 
   const logout = async () => {
     await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
     setUser(null);
   };
+
+  const actionButton = (kind: "enquiries" | "tickets", id: string, status: string, testid: string) =>
+    status === "RESOLVED" ? (
+      <button
+        data-testid={`${testid}-reopen`}
+        onClick={() => statusMutation.mutate({ kind, id, status: kind === "enquiries" ? "NEW" : "OPEN" })}
+        disabled={statusMutation.isPending}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-[#dce6ef] px-3 py-1.5 text-xs font-bold text-[#61758b] transition-colors hover:border-[#0876d1] hover:text-[#0876d1] disabled:opacity-50"
+      >
+        <Undo2 className="h-3.5 w-3.5" /> Reopen
+      </button>
+    ) : (
+      <button
+        data-testid={`${testid}-resolve`}
+        onClick={() => statusMutation.mutate({ kind, id, status: "RESOLVED" })}
+        disabled={statusMutation.isPending}
+        className="inline-flex items-center gap-1.5 rounded-lg bg-[#0876d1] px-3 py-1.5 text-xs font-bold text-white transition-colors hover:bg-[#0563b4] disabled:opacity-50"
+      >
+        <CheckCheck className="h-3.5 w-3.5" /> Resolve
+      </button>
+    );
 
   if (loading) {
     return (
@@ -156,11 +203,12 @@ export default function Admin() {
                       <TableHead className="text-[#61758b]">System</TableHead>
                       <TableHead className="text-[#61758b]">Message</TableHead>
                       <TableHead className="text-[#61758b]">Status</TableHead>
+                      <TableHead className="text-[#61758b]">Action</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {enquiries.data.map((e) => (
-                      <TableRow key={e.id} className="border-[#dce6ef]">
+                      <TableRow key={e.id} className="border-[#dce6ef]" data-testid={`enquiry-row-${e.id}`}>
                         <TableCell className="whitespace-nowrap font-mono text-xs text-[#61758b]">{format(new Date(e.created_at), "dd MMM HH:mm")}</TableCell>
                         <TableCell>
                           <p className="text-sm font-semibold text-[#071c38]">{e.name}</p>
@@ -170,8 +218,9 @@ export default function Admin() {
                         <TableCell className="text-sm font-semibold text-[#0876d1]">{e.system}</TableCell>
                         <TableCell className="max-w-xs truncate text-sm text-[#61758b]" title={e.message}>{e.message}</TableCell>
                         <TableCell>
-                          <span className="rounded-full bg-[#e7f6ee] px-2.5 py-1 font-mono text-[10px] font-bold text-[#15803d]">{e.status}</span>
+                          <span className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-bold ${statusBadge(e.status)}`}>{e.status}</span>
                         </TableCell>
+                        <TableCell>{actionButton("enquiries", e.id, e.status, `enquiry-${e.id}`)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -199,11 +248,12 @@ export default function Admin() {
                       <TableHead className="text-[#61758b]">Vessel</TableHead>
                       <TableHead className="text-[#61758b]">Reporter</TableHead>
                       <TableHead className="text-[#61758b]">Status</TableHead>
+                      <TableHead className="text-[#61758b]">Action</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {tickets.data.map((t) => (
-                      <TableRow key={t.id} className="border-[#dce6ef]">
+                      <TableRow key={t.id} className="border-[#dce6ef]" data-testid={`ticket-row-${t.id}`}>
                         <TableCell className="font-mono text-xs font-bold text-[#0876d1]">{t.ticket_ref}</TableCell>
                         <TableCell>
                           <span className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-bold ${t.priority === "P1" ? "bg-[#fef2f2] text-[#dc2626]" : t.priority === "P2" ? "bg-[#fffbeb] text-[#b45309]" : "bg-[#f5f8fb] text-[#61758b]"}`}>
@@ -217,8 +267,9 @@ export default function Admin() {
                           <p className="text-xs text-[#61758b]">{t.email}</p>
                         </TableCell>
                         <TableCell>
-                          <span className="rounded-full bg-[#e7f6ee] px-2.5 py-1 font-mono text-[10px] font-bold text-[#15803d]">{t.status}</span>
+                          <span className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-bold ${statusBadge(t.status)}`}>{t.status}</span>
                         </TableCell>
+                        <TableCell>{actionButton("tickets", t.id, t.status, `ticket-${t.id}`)}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

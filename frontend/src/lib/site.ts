@@ -87,42 +87,6 @@ export const SYSTEMS: SatSystem[] = [
   },
 ];
 
-export interface Plan {
-  name: string;
-  price: string;
-  note: string;
-  features: string[];
-  highlight?: boolean;
-}
-
-export const PLANS: Plan[] = [
-  {
-    name: "Coastal Link",
-    price: "from $290/mo",
-    note: "indicative, per vessel",
-    features: ["4G/LTE + near-shore LEO", "Crew Wi-Fi with quotas", "Remote monitoring", "Next-port engineer dispatch"],
-  },
-  {
-    name: "Offshore Pro",
-    price: "from $990/mo",
-    note: "indicative, per vessel",
-    features: ["Starlink Maritime primary", "FBB / Certus failover", "Bonded SD-WAN router", "24/7 NOC watchkeeping"],
-    highlight: true,
-  },
-  {
-    name: "Global Hybrid",
-    price: "from $2,400/mo",
-    note: "indicative, per vessel",
-    features: ["Dual-LEO (Starlink + OneWeb)", "KVH VSAT tertiary", "Committed information rate", "Quarterly link audits"],
-  },
-  {
-    name: "Polar Certus",
-    price: "on application",
-    note: "survey-priced",
-    features: ["Iridium Certus 700 primary", "GMDSS console integration", "High-latitude routing", "Survey documentation pack"],
-  },
-];
-
 export interface Region {
   id: string;
   name: string;
@@ -268,6 +232,8 @@ export const FALLBACK_POSTS: Post[] = [
     created_at: "2026-04-15T09:00:00Z",
   },
 ];
+
+export const STATS = { vessels: "350+", ports: "40+", systems: "5", watch: "24/7" };
 
 export const SYSTEM_OPTIONS = [
   "Starlink Maritime",

@@ -32,7 +32,7 @@ export default function Support() {
       setDone(t);
       toast.success(`Ticket ${t.ticket_ref} dispatched to the NOC.`);
     },
-    onError: () => toast.error("Could not raise the ticket. Please email info@vjtechnicalsolutions.com."),
+    onError: () => toast.error("Could not raise the ticket. Please email info.vjtechnicalsolutions@gmail.com."),
   });
 
   const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -69,7 +69,7 @@ export default function Support() {
               <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[#dc2626]" />
               <p className="text-xs leading-relaxed text-[#991b1b]">
                 P1 emergencies: raise the ticket, then email{" "}
-                <a href="mailto:info@vjtechnicalsolutions.com" className="underline">info@vjtechnicalsolutions.com</a>{" "}
+                <a href="mailto:info.vjtechnicalsolutions@gmail.com" className="underline">info.vjtechnicalsolutions@gmail.com</a>{" "}
                 with the ticket reference to page the on-call engineer.
               </p>
             </div>

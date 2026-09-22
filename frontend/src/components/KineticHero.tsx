@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Activity, Signal, ArrowUpDown } from "lucide-react";
 import { MaskedLine } from "./Reveal";
-import { SYSTEMS } from "@/lib/site";
+import { SYSTEMS, STATS } from "@/lib/site";
 
 export default function KineticHero() {
   const [activeId, setActiveId] = useState(SYSTEMS[0].id);
@@ -51,9 +51,9 @@ export default function KineticHero() {
             transition={{ duration: 0.6, delay: 0.75 }}
             className="mt-7 max-w-xl text-base leading-relaxed text-[#c7d5e2] sm:text-lg"
           >
-            VJ Technical Solutions engineers, installs and supports Starlink Maritime, OneWeb, KVH VSAT,
-            Iridium Certus and FleetBroadband networks — plus vessel IT, CCTV and cybersecurity — so your
-            vessel stays online, operational and survey-ready on every voyage.
+            VJ Technical Solutions is first a field team — vessel attendance, installation, repair and
+            maintenance at 40+ ports — backed by deep Starlink Maritime, OneWeb, KVH VSAT, Iridium Certus
+            and FleetBroadband expertise, so your vessel stays online, operational and survey-ready on every voyage.
           </motion.p>
 
           <motion.div
@@ -86,9 +86,9 @@ export default function KineticHero() {
             className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-[#1e3a5c] pt-7"
           >
             {[
-              { v: "350+", l: "Vessels supported" },
-              { v: "40+", l: "Ports with engineers" },
-              { v: "24/7", l: "NOC watchkeeping" },
+              { v: STATS.vessels, l: "Vessels supported" },
+              { v: STATS.ports, l: "Ports with engineers" },
+              { v: STATS.watch, l: "NOC watchkeeping" },
             ].map((s) => (
               <div key={s.l}>
                 <p className="font-heading text-2xl font-extrabold text-white sm:text-3xl">{s.v}</p>

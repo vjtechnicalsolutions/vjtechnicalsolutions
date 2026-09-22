@@ -23,6 +23,7 @@
 
 ## Implemented
 - 2026-09-22: Full site build — light VJ theme, kinetic hero (masked line reveal, parallax, live telemetry card), editorial marquee, 5-system services matrix with per-category images, capabilities grid with category images (incl. Marine CCTV), coverage simulator + plan tiers, engineering manifesto, news feed (DB + static fallback), support tickets with priority SLAs, enquiry/quote form, admin operations board with Google sign-in (Emergent managed), lenis smooth scroll, data-testids throughout.
+- 2026-09-22: Official VJ logo integrated (header + footer white badge) + VJ wave favicons; admin locked to info.vjtechnicalsolutions@gmail.com via ADMIN_EMAILS; email alerts to owner Gmail via Emergent-managed Resend (backend/lib/emailer.py, guardrail-gated, fire-and-forget); Resolve/Reopen status actions on admin board (PATCH /api/enquiries|tickets/:id/status); Careers and FAQ pages added; copy refocused on vessel attendance & repair (hero, capabilities order).
 
 ## Backlog / next
 - P0: Restrict admin via ADMIN_EMAILS once owner shares their Gmail

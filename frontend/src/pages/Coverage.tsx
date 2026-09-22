@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Check, Compass } from "lucide-react";
-import { REGIONS, PLANS } from "@/lib/site";
+import { Compass } from "lucide-react";
+import { REGIONS } from "@/lib/site";
 import { FadeUp, SectionHeading } from "@/components/Reveal";
 
 export default function Coverage() {
@@ -15,7 +14,7 @@ export default function Coverage() {
         <div className="absolute inset-0 bg-grid-light" />
         <div className="relative mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-28">
           <FadeUp>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#0876d1]">Coverage &amp; Plans</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#0876d1]">Coverage</p>
             <h1 className="mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-tight tracking-tight text-[#071c38] sm:text-5xl">
               Pick your ocean. We engineer the link.
             </h1>
@@ -97,57 +96,6 @@ export default function Coverage() {
             </div>
           </motion.div>
         </AnimatePresence>
-      </section>
-
-      <section className="border-t border-[#dce6ef] bg-[#f5f8fb]">
-        <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-          <SectionHeading
-            eyebrow="Plan Tiers"
-            title="Airtime & support, bundled"
-            copy="Indicative monthly pricing per vessel — final quotes follow a link budget and route survey."
-            align="center"
-          />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {PLANS.map((p, i) => (
-              <FadeUp key={p.name} delay={i * 0.06}>
-                <div
-                  className={`flex h-full flex-col rounded-2xl border bg-white p-7 transition-all duration-300 hover:-translate-y-1 ${
-                    p.highlight
-                      ? "border-[#0876d1] shadow-[0_16px_48px_rgba(8,118,209,0.18)]"
-                      : "border-[#dce6ef] shadow-[0_8px_28px_rgba(7,31,55,0.05)] hover:shadow-[0_16px_40px_rgba(7,31,55,0.12)]"
-                  }`}
-                >
-                  {p.highlight && (
-                    <span className="mb-4 inline-block w-max rounded-full bg-[#0876d1] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white">
-                      Most deployed
-                    </span>
-                  )}
-                  <h3 className="font-heading text-lg font-bold text-[#071c38]">{p.name}</h3>
-                  <p className="mt-2 font-heading text-2xl font-extrabold text-[#0876d1]">{p.price}</p>
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-[#8aa0b8]">{p.note}</p>
-                  <ul className="mt-6 flex-1 space-y-3">
-                    {p.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-[#334e68]">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#15803d]" /> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to="/quote"
-                    data-testid={`plan-quote-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    className={`mt-7 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold transition-colors ${
-                      p.highlight
-                        ? "bg-[#0876d1] text-white hover:bg-[#0563b4]"
-                        : "border border-[#0876d1] text-[#0876d1] hover:bg-[#0876d1] hover:text-white"
-                    }`}
-                  >
-                    Request this plan <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
       </section>
     </>
   );

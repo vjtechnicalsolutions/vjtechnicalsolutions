@@ -11,12 +11,14 @@ import httpx
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Request, Response
 from pydantic import BaseModel, EmailStr, Field
+from pymongo import ReturnDocument
 from starlette.middleware.cors import CORSMiddleware
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 from lib.db import client, db, ensure_indexes
+from lib.emailer import enquiry_email_html, notify_owner, ticket_email_html
 
 
 @asynccontextmanager
@@ -31,6 +33,9 @@ api_router = APIRouter(prefix="/api")
 
 EMERGENT_SESSION_URL = "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data"
 SESSION_DAYS = 7
+
+ENQUIRY_STATUSES = {"NEW", "IN_PROGRESS", "RESOLVED"}
+TICKET_STATUSES = {"OPEN", "IN_PROGRESS", "RESOLVED"}
 
 
 # ---------- Models ----------
@@ -83,6 +88,10 @@ class Post(BaseModel):
 
 class SessionRequest(BaseModel):
     session_id: str
+
+
+class StatusUpdate(BaseModel):
+    status: str
 
 
 class User(BaseModel):
@@ -182,6 +191,18 @@ async def root():
 async def create_enquiry(input: EnquiryCreate):
     enquiry = Enquiry(**input.model_dump())
     await db.enquiries.insert_one(enquiry.model_dump())
+    html = enquiry_email_html([
+        ("Name", enquiry.name),
+        ("Email", enquiry.email),
+        ("Phone", enquiry.phone or ""),
+        ("Vessel", enquiry.vessel_name or ""),
+        ("IMO", enquiry.imo or ""),
+        ("Port / Location", enquiry.port or ""),
+        ("System", enquiry.system),
+        ("Required date", enquiry.service_date or ""),
+        ("Message", enquiry.message),
+    ])
+    asyncio.create_task(notify_owner(f"New service request — {enquiry.system}", html))
     return enquiry
 
 
@@ -189,6 +210,17 @@ async def create_enquiry(input: EnquiryCreate):
 async def create_ticket(input: TicketCreate):
     ticket = Ticket(**input.model_dump())
     await db.tickets.insert_one(ticket.model_dump())
+    html = ticket_email_html([
+        ("Reference", ticket.ticket_ref),
+        ("Priority", ticket.priority),
+        ("Subject", ticket.subject),
+        ("Reporter", ticket.name),
+        ("Email", ticket.email),
+        ("Vessel", ticket.vessel_name or ""),
+        ("IMO", ticket.imo or ""),
+        ("Description", ticket.description),
+    ])
+    asyncio.create_task(notify_owner(f"New support ticket {ticket.ticket_ref} ({ticket.priority})", html))
     return ticket
 
 
@@ -203,9 +235,37 @@ async def list_enquiries(user: dict = Depends(get_admin_user)):
     return await db.enquiries.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
 
 
+@api_router.patch("/enquiries/{enquiry_id}/status", response_model=Enquiry)
+async def update_enquiry_status(enquiry_id: str, body: StatusUpdate, user: dict = Depends(get_admin_user)):
+    status = body.status.upper()
+    if status not in ENQUIRY_STATUSES:
+        raise HTTPException(status_code=400, detail="Invalid status")
+    doc = await db.enquiries.find_one_and_update(
+        {"id": enquiry_id}, {"$set": {"status": status}},
+        return_document=ReturnDocument.AFTER, projection={"_id": 0},
+    )
+    if not doc:
+        raise HTTPException(status_code=404, detail="Enquiry not found")
+    return doc
+
+
 @api_router.get("/tickets", response_model=List[Ticket])
 async def list_tickets(user: dict = Depends(get_admin_user)):
     return await db.tickets.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
+
+
+@api_router.patch("/tickets/{ticket_id}/status", response_model=Ticket)
+async def update_ticket_status(ticket_id: str, body: StatusUpdate, user: dict = Depends(get_admin_user)):
+    status = body.status.upper()
+    if status not in TICKET_STATUSES:
+        raise HTTPException(status_code=400, detail="Invalid status")
+    doc = await db.tickets.find_one_and_update(
+        {"id": ticket_id}, {"$set": {"status": status}},
+        return_document=ReturnDocument.AFTER, projection={"_id": 0},
+    )
+    if not doc:
+        raise HTTPException(status_code=404, detail="Ticket not found")
+    return doc
 
 
 app.include_router(api_router)

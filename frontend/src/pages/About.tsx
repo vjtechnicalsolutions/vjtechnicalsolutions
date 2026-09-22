@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import EngineerManifesto from "@/components/EngineerManifesto";
 import { FadeUp, SectionHeading } from "@/components/Reveal";
+import { STATS as SITE_STATS } from "@/lib/site";
 
 const STATS = [
-  { v: "350+", l: "Vessels supported" },
-  { v: "5", l: "Satellite systems certified" },
-  { v: "40+", l: "Ports with field engineers" },
-  { v: "24/7", l: "Support coordination" },
+  { v: SITE_STATS.vessels, l: "Vessels supported" },
+  { v: SITE_STATS.systems, l: "Satellite systems certified" },
+  { v: SITE_STATS.ports, l: "Ports with field engineers" },
+  { v: SITE_STATS.watch, l: "Support coordination" },
 ];
 
 const BADGES = ["SOLAS", "GMDSS", "IACS UR E26/E27", "ISO 27001-aligned", "Iridium Partner", "KVH Certified"];
@@ -31,8 +32,8 @@ export default function About() {
         <FadeUp>
           <div className="group relative overflow-hidden rounded-2xl border border-[#dce6ef] shadow-[0_16px_48px_rgba(7,31,55,0.1)]">
             <img
-              src="/assets/maritime-radome-technician.png"
-              alt="VJ engineer servicing a stabilised VSAT radome"
+              src="https://images.unsplash.com/photo-1782940983972-357de3c6735a?crop=entropy&cs=srgb&fm=jpg&q=85"
+              alt="Vessel mast with VSAT and navigation antennas"
               className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>

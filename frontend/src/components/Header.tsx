@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 
 const LINKS = [
   { name: "Services", path: "/services", testid: "nav-link-services" },
-  { name: "Coverage & Plans", path: "/coverage", testid: "nav-link-coverage" },
+  { name: "Coverage", path: "/coverage", testid: "nav-link-coverage" },
   { name: "About", path: "/about", testid: "nav-link-about" },
   { name: "Intelligence", path: "/news", testid: "nav-link-news" },
   { name: "Support", path: "/support", testid: "nav-link-support" },

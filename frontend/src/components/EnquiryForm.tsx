@@ -36,7 +36,7 @@ export default function EnquiryForm() {
       setDone(data);
       toast.success("Service request received by our NOC.");
     },
-    onError: () => toast.error("Could not send the request. Please email info@vjtechnicalsolutions.com."),
+    onError: () => toast.error("Could not send the request. Please email info.vjtechnicalsolutions@gmail.com."),
   });
 
   const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
