@@ -11,25 +11,14 @@ const LINKS = [
 ];
 
 export function BrandMark({ dark = false }: { dark?: boolean }) {
-  return (
-    <span className="flex items-center gap-3">
-      <span className="relative block h-10 w-11" aria-hidden>
-        <span className="absolute left-0 top-1.5 h-6 w-10 -rotate-[15deg] rounded-full border-4 border-[#0876d1] border-t-transparent border-r-transparent" />
-        <span className="absolute left-2 top-3.5 h-5 w-8 -rotate-[15deg] rounded-full border-[3px] border-[#1388e5] border-t-transparent border-r-transparent" />
+  if (dark) {
+    return (
+      <span className="inline-flex items-center rounded-lg bg-white px-3 py-2">
+        <img src="/assets/vj-logo.png" alt="VJ Technical Solutions" className="h-9 w-auto" />
       </span>
-      <span className="leading-none">
-        <span className={`block font-heading text-[15px] font-extrabold tracking-tight ${dark ? "text-white" : "text-[#071c38]"}`}>
-          VJ TECHNICAL
-        </span>
-        <span className={`block font-heading text-[15px] font-extrabold tracking-tight ${dark ? "text-white" : "text-[#071c38]"}`}>
-          SOLUTIONS
-        </span>
-        <span className={`mt-1 block font-mono text-[8px] font-semibold tracking-[0.2em] ${dark ? "text-[#7d99b5]" : "text-[#597086]"}`}>
-          MARITIME | CONNECT | SUPPORT
-        </span>
-      </span>
-    </span>
-  );
+    );
+  }
+  return <img src="/assets/vj-logo.png" alt="VJ Technical Solutions" className="h-11 w-auto" />;
 }
 
 export default function Header() {
