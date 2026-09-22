@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
-import { MapPin } from "lucide-react";
+import { MapPin, MessageCircle } from "lucide-react";
 import { BrandMark } from "./Header";
 
 const SYSTEMS_LINKS = [
@@ -61,6 +61,11 @@ export default function Footer() {
               </li>
               <li className="inline-flex items-center gap-2 text-[#b9cad8]">
                 <MapPin className="h-3.5 w-3.5" /> Coimbatore, Tamil Nadu, India
+              </li>
+              <li>
+                <a href="https://wa.me/917806993126" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#b9cad8] transition-colors hover:text-[#5bb7f5]">
+                  <MessageCircle className="h-3.5 w-3.5" /> WhatsApp: +91 78069 93126
+                </a>
               </li>
               <li><Link to="/support" className="transition-colors hover:text-[#5bb7f5]">Vessel Attendance</Link></li>
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>
