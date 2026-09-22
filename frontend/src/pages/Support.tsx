@@ -84,7 +84,11 @@ export default function Support() {
               <p className="text-xs leading-relaxed text-[#334e68]">
                 Every attendance ends with a signed service report — link tests, spares used and photos.{" "}
                 <a href="/assets/VJ-Sample-Service-Report.pdf" download className="font-bold text-[#0876d1] underline" data-testid="attendance-report-download">
-                  Download a sample report (PDF)
+                  Sample report
+                </a>{" "}
+                ·{" "}
+                <a href="/assets/VJ-Blank-Service-Report-Delivery-Order.pdf" download className="font-bold text-[#0876d1] underline" data-testid="blank-forms-download">
+                  Blank forms (PDF)
                 </a>
               </p>
             </div>
