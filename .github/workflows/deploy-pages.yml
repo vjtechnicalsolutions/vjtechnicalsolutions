@@ -3,7 +3,7 @@ name: Deploy VJ Technical Solutions to GitHub Pages
 on:
   push:
     branches:
-      - conflict_220926_1736
+      - main
   workflow_dispatch:
 
 permissions:
