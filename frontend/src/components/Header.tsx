@@ -101,7 +101,7 @@ export function BrandMark({ dark = false }: { dark?: boolean }) {
   if (dark) {
     return (
       <span className="inline-flex items-center rounded-lg bg-white px-3 py-2">
-        <img src={`${import.meta.env.BASE_URL}assets/vj-logo.png`} alt="VJ Technical Solutions" className="h-9 w-auto" />
+        <img src="/vjtechnicalsolutions/assets/vj-logo.png" alt="VJ Technical Solutions" className="h-9 w-auto" />
       </span>
     );
   }
