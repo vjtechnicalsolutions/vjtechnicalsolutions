@@ -79,6 +79,15 @@ export default function Support() {
                 </li>
               ))}
             </ol>
+            <div className="mt-6 flex items-start gap-3 rounded-lg border border-[#bfdbfe] bg-[#eaf4ff] p-4">
+              <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#0876d1]" />
+              <p className="text-xs leading-relaxed text-[#334e68]">
+                Every attendance ends with a signed service report — link tests, spares used and photos.{" "}
+                <a href="/assets/VJ-Sample-Service-Report.pdf" download className="font-bold text-[#0876d1] underline" data-testid="attendance-report-download">
+                  Download a sample report (PDF)
+                </a>
+              </p>
+            </div>
           </div>
 
           <div className="mt-6 rounded-2xl border border-[#dce6ef] bg-white p-8 shadow-[0_8px_28px_rgba(7,31,55,0.05)]">

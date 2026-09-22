@@ -62,6 +62,8 @@ export default function Footer() {
               <li><Link to="/quote" className="transition-colors hover:text-[#5bb7f5]">Request Vessel Attendance</Link></li>
               <li><Link to="/careers" className="transition-colors hover:text-[#5bb7f5]">Careers</Link></li>
               <li><Link to="/faq" className="transition-colors hover:text-[#5bb7f5]">FAQ</Link></li>
+              <li><Link to="/gallery" className="transition-colors hover:text-[#5bb7f5]">Photo Gallery</Link></li>
+              <li><a href="/assets/VJ-Sample-Service-Report.pdf" download className="transition-colors hover:text-[#5bb7f5]">Sample Service Report (PDF)</a></li>
             </ul>
           </div>
         </div>

@@ -11,6 +11,7 @@ import Support from "@/pages/Support";
 import Quote from "@/pages/Quote";
 import Careers from "@/pages/Careers";
 import Faq from "@/pages/Faq";
+import Gallery from "@/pages/Gallery";
 import Admin from "@/pages/Admin";
 import AuthCallback from "@/pages/AuthCallback";
 
@@ -33,6 +34,7 @@ function AppRouter() {
         <Route path="/quote" element={<Quote />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Home />} />
       </Route>
