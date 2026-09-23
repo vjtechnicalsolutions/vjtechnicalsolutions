@@ -101,11 +101,11 @@ export function BrandMark({ dark = false }: { dark?: boolean }) {
   if (dark) {
     return (
       <span className="inline-flex items-center rounded-lg bg-white px-3 py-2">
-        <img src="/vjtechnicalsolutions/assets/vj-new-logo.jpg" alt="VJ Technical Solutions" className="h-12 w-12 object-contain" />
+        <img src="/vjtechnicalsolutions/assets/vj-new-logo.jpg" alt="VJ Technical Solutions" className="h-16 w-16 object-contain" />
       </span>
     );
   }
-  return <img src={`${import.meta.env.BASE_URL}assets/vj-new-logo.jpg`} alt="VJ Technical Solutions" className="h-14 w-14 object-contain" />;
+  return <img src={`${import.meta.env.BASE_URL}assets/vj-new-logo.jpg`} alt="VJ Technical Solutions" className="h-20 w-20 object-contain" />;
 }
 
 export default function Header() {
@@ -118,7 +118,7 @@ export default function Header() {
       className="fixed inset-x-0 top-0 z-50 border-b border-[#e2ebf3] bg-white/90 shadow-[0_4px_18px_rgba(8,29,53,0.06)] backdrop-blur-xl"
       onMouseLeave={() => setMegaOpen(false)}
     >
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <div className="mx-auto flex h-[96px] max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link to="/" data-testid="nav-brand-logo" aria-label="VJ Technical Solutions home">
           <BrandMark />
         </Link>
