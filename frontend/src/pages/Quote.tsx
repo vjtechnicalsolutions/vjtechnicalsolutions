@@ -3,7 +3,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import { FadeUp } from "@/components/Reveal";
 
 const INFO = [
-  { icon: Mail, label: "Email", value: "info@vjtechnicalsolutions.com", href: "mailto:info@vjtechnicalsolutions.com" },
+  { icon: Mail, label: "Email", value: "info.vjtechnicalsolutions@gmail.com", href: "mailto:info.vjtechnicalsolutions@gmail.com" },
   { icon: MapPin, label: "Location", value: "Coimbatore, Tamil Nadu, India" },
   { icon: Clock, label: "Response", value: "Engineer confirmed within 4 business hours" },
   { icon: Globe2, label: "Coverage", value: "40+ ports, flyaway kit worldwide" },
