@@ -60,21 +60,6 @@ We have received your vessel attendance request.
 
 Request Reference: ${ticketRef}
 
-Customer Details
-Contact Person: ${form.name}
-Email: ${form.email}
-Phone / WhatsApp: ${form.phone}
-
-Vessel Details
-Vessel Name: ${form.vessel_name}
-IMO Number: ${form.imo}
-Port / Location: ${form.port}
-Requested Date: ${form.service_date || "Not specified"}
-System: ${form.system}
-
-Required Work
-${form.message}
-
 Our team will review your request and respond within 4 business hours.
 
 Best Regards,
