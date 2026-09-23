@@ -40,16 +40,9 @@ export default function Support() {
       localStorage.setItem(key, String(ticketNumber + 1));
       const ticketRef = "VJ-" + String(ticketNumber).padStart(5, "0");
 
-      const iframeName = "formsubmit_" + Date.now();
-      const iframe = document.createElement("iframe");
-      iframe.name = iframeName;
-      iframe.style.display = "none";
-      document.body.appendChild(iframe);
-
       const submitForm = document.createElement("form");
       submitForm.method = "POST";
       submitForm.action = "https://formsubmit.co/2828c207e9f03020f6a8c251a774e6ce";
-      submitForm.target = iframeName;
       submitForm.style.display = "none";
 
       const fields = {
@@ -58,6 +51,7 @@ export default function Support() {
         _replyto: form.email,
         _template: "table",
         _url: "https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/support",
+        _next: `https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/request-received?ref=${encodeURIComponent(ticketRef)}`,
         _autoresponse: `VJ Technical Solutions – Request Received
 
 Dear Customer,
@@ -99,10 +93,6 @@ Keeping Vessels Connected, Operational, and Technically Ready`,
 
       document.body.appendChild(submitForm);
       submitForm.submit();
-      setTimeout(() => {
-        submitForm.remove();
-        iframe.remove();
-      }, 5000);
 
       return { id: crypto.randomUUID(), ticket_ref: ticketRef, priority: form.priority, status: "received", subject: form.subject } as Ticket;
     },
