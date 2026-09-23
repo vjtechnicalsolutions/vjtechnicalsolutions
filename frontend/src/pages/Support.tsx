@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Anchor, CheckCircle2, ClipboardCheck, Plane, Send, Ship } from "lucide-react";
-import { apiPost } from "@/lib/api";
 import { FadeUp } from "@/components/Reveal";
 
 interface Ticket {
@@ -34,12 +33,26 @@ export default function Support() {
   const [done, setDone] = useState<Ticket | null>(null);
 
   const mutation = useMutation({
-    mutationFn: () => apiPost<Ticket>("/tickets", form),
+    mutationFn: async () => {
+      const response = await fetch("https://formsubmit.co/ajax/info@vjtechnicalsolutions.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...form,
+          _subject: "New VJ Technical Solutions Vessel Attendance Request",
+          _replyto: form.email,
+          _template: "table",
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error("Submission failed");
+      return { id: crypto.randomUUID(), ticket_ref: "VJ-" + Date.now().toString().slice(-6), priority: form.priority, status: "received", subject: form.subject } as Ticket;
+    },
     onSuccess: (t) => {
       setDone(t);
-      toast.success(`Attendance request ${t.ticket_ref} logged.`);
+      toast.success(`Attendance request ${t.ticket_ref} sent to VJ Technical Solutions.`);
     },
-    onError: () => toast.error("Could not send the request. Please email info.vjtechnicalsolutions@gmail.com."),
+    onError: () => toast.error("Could not send the request. Please try again or email info@vjtechnicalsolutions.com."),
   });
 
   const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
