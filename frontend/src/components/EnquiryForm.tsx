@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { CheckCircle2, Send } from "lucide-react";
-import { apiPost } from "@/lib/api";
 import { SYSTEM_OPTIONS } from "@/lib/site";
 
 interface Enquiry {
@@ -31,12 +30,27 @@ export default function EnquiryForm() {
   const [done, setDone] = useState<Enquiry | null>(null);
 
   const mutation = useMutation({
-    mutationFn: () => apiPost<Enquiry>("/enquiries", { ...form, service_date: form.service_date || null }),
+    mutationFn: async () => {
+      const response = await fetch("https://formsubmit.co/ajax/info@vjtechnicalsolutions.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...form,
+          service_date: form.service_date || null,
+          _subject: "New VJ Technical Solutions Service Request",
+          _replyto: form.email,
+          _template: "table",
+        }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error("Submission failed");
+      return { id: crypto.randomUUID(), name: form.name, email: form.email, system: form.system, status: "received", created_at: new Date().toISOString() } as Enquiry;
+    },
     onSuccess: (data) => {
       setDone(data);
-      toast.success("Service request received by our NOC.");
+      toast.success("Service request sent to VJ Technical Solutions.");
     },
-    onError: () => toast.error("Could not send the request. Please email info.vjtechnicalsolutions@gmail.com."),
+    onError: () => toast.error("Could not send the request. Please try again or email info@vjtechnicalsolutions.com."),
   });
 
   const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
