@@ -47,7 +47,12 @@ export default function Support() {
       });
       const data = await response.json();
       if (!response.ok || !data.success) throw new Error("Submission failed");
-      return { id: crypto.randomUUID(), ticket_ref: "VJ-" + Date.now().toString().slice(-6), priority: form.priority, status: "received", subject: form.subject } as Ticket;
+      const key = "vjtechnicalsolutions_next_ticket";
+      const current = Number(localStorage.getItem(key) || "1");
+      const ticketNumber = Math.max(1, current);
+      localStorage.setItem(key, String(ticketNumber + 1));
+      const ticketRef = "VJ-" + String(ticketNumber).padStart(5, "0");
+      return { id: crypto.randomUUID(), ticket_ref: ticketRef, priority: form.priority, status: "received", subject: form.subject } as Ticket;
     },
     onSuccess: (t) => {
       setDone(t);
@@ -136,8 +141,7 @@ export default function Support() {
               <CheckCircle2 className="mx-auto h-12 w-12 text-[#15803d]" />
               <h3 className="mt-5 font-heading text-2xl font-bold text-[#071c38]">Attendance request {done.ticket_ref} logged</h3>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#334e68]">
-                Type: {done.priority}. Our coordinator will confirm the engineer and kit on your contact
-                email within 4 business hours.
+                Our team has received your vessel attendance request. We will respond to info.vjtechnicalsolutions@gmail.com within 4 business hours.
               </p>
               <button
                 data-testid="support-ticket-new-button"
