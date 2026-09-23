@@ -14,6 +14,7 @@ import Faq from "@/pages/Faq";
 import Gallery from "@/pages/Gallery";
 import Admin from "@/pages/Admin";
 import AuthCallback from "@/pages/AuthCallback";
+import RequestReceived from "@/pages/RequestReceived";
 
 function AppRouter() {
   const location = useLocation();
@@ -36,6 +37,7 @@ function AppRouter() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/request-received" element={<RequestReceived />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
