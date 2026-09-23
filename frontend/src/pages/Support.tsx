@@ -34,7 +34,7 @@ export default function Support() {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const response = await fetch("https://formsubmit.co/ajax/info.vjtechnicalsolutions@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/info@vjtechnicalsolutions.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -52,7 +52,7 @@ export default function Support() {
       setDone(t);
       toast.success(`Attendance request ${t.ticket_ref} sent to VJ Technical Solutions.`);
     },
-    onError: () => toast.error("Could not send the request. Please try again or email info.vjtechnicalsolutions@gmail.com."),
+    onError: () => toast.error("Could not send the request. Please try again or email info@vjtechnicalsolutions.com."),
   });
 
   const set = (k: keyof typeof EMPTY) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
