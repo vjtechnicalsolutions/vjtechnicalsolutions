@@ -101,11 +101,11 @@ export function BrandMark({ dark = false }: { dark?: boolean }) {
   if (dark) {
     return (
       <span className="inline-flex items-center rounded-lg bg-white px-3 py-2">
-        <img src="/vjtechnicalsolutions/assets/vj-logo.png" alt="VJ Technical Solutions" className="h-9 w-auto" />
+        <img src="/vjtechnicalsolutions/assets/vj-new-logo.jpg" alt="VJ Technical Solutions" className="h-12 w-12 object-contain" />
       </span>
     );
   }
-  return <img src={`${import.meta.env.BASE_URL}assets/vj-logo.png`} alt="VJ Technical Solutions" className="h-11 w-auto" />;
+  return <img src={`${import.meta.env.BASE_URL}assets/vj-new-logo.jpg`} alt="VJ Technical Solutions" className="h-14 w-14 object-contain" />;
 }
 
 export default function Header() {
