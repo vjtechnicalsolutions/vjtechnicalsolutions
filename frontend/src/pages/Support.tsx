@@ -34,7 +34,7 @@ export default function Support() {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const response = await fetch("https://formsubmit.co/ajax/info.vjtechnicalsolutions@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/2828c207e9f03020f6a8c251a774e6ce", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
