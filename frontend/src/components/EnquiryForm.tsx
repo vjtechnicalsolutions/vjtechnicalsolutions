@@ -44,7 +44,12 @@ export default function EnquiryForm() {
       });
       const data = await response.json();
       if (!response.ok || !data.success) throw new Error("Submission failed");
-      return { id: crypto.randomUUID(), name: form.name, email: form.email, system: form.system, status: "received", created_at: new Date().toISOString() } as Enquiry;
+      const key = "vjtechnicalsolutions_next_ticket";
+      const current = Number(localStorage.getItem(key) || "1");
+      const ticketNumber = Math.max(1, current);
+      localStorage.setItem(key, String(ticketNumber + 1));
+      const ticketRef = "VJ-" + String(ticketNumber).padStart(5, "0");
+      return { id: ticketRef, name: form.name, email: form.email, system: form.system, status: "received", created_at: new Date().toISOString() } as Enquiry;
     },
     onSuccess: (data) => {
       setDone(data);
@@ -60,10 +65,9 @@ export default function EnquiryForm() {
     return (
       <div className="rounded-2xl border border-[#bbf7d0] bg-[#f0fdf4] p-10 text-center" data-testid="quote-form-success">
         <CheckCircle2 className="mx-auto h-12 w-12 text-[#15803d]" />
-        <h3 className="mt-5 font-heading text-2xl font-bold text-[#071c38]">Request logged — reference {done.id.slice(0, 8).toUpperCase()}</h3>
+        <h3 className="mt-5 font-heading text-2xl font-bold text-[#071c38]">Request logged — reference {done.id}</h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#334e68]">
-          Our NOC has your {done.system} request for review. An engineer will respond to{" "}
-          <span className="font-semibold text-[#071c38]">{done.email}</span> within 4 business hours.
+          Our team has received your vessel attendance request. We will respond to info.vjtechnicalsolutions@gmail.com within 4 business hours.
         </p>
         <button
           data-testid="quote-form-new-button"
