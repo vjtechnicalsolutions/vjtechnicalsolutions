@@ -31,24 +31,65 @@ export default function EnquiryForm() {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const response = await fetch("https://formsubmit.co/ajax/2828c207e9f03020f6a8c251a774e6ce", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          ...form,
-          service_date: form.service_date || null,
-          _subject: "New VJ Technical Solutions Service Request",
-          _replyto: form.email,
-          _template: "table",
-        }),
-      });
-      const data = await response.json();
-      if (!response.ok || !data.success) throw new Error("Submission failed");
       const key = "vjtechnicalsolutions_next_ticket";
       const current = Number(localStorage.getItem(key) || "1");
       const ticketNumber = Math.max(1, current);
       localStorage.setItem(key, String(ticketNumber + 1));
       const ticketRef = "VJ-" + String(ticketNumber).padStart(5, "0");
+
+      const iframeName = "formsubmit_" + Date.now();
+      const iframe = document.createElement("iframe");
+      iframe.name = iframeName;
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+
+      const submitForm = document.createElement("form");
+      submitForm.method = "POST";
+      submitForm.action = "https://formsubmit.co/2828c207e9f03020f6a8c251a774e6ce";
+      submitForm.target = iframeName;
+      submitForm.style.display = "none";
+
+      const fields = {
+        ...form,
+        service_date: form.service_date || "",
+        _subject: "New VJ Technical Solutions Vessel Attendance Request",
+        _replyto: form.email,
+        _template: "table",
+        _url: "https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/quote",
+        _autoresponse: `VJ Technical Solutions – Request Received
+
+Dear Customer,
+
+Thank you for contacting VJ Technical Solutions.
+
+We have received your vessel attendance request.
+
+Request Reference: ${ticketRef}
+
+Our team will review your request and respond within 4 business hours.
+
+Best Regards,
+
+VJ Technical Solutions
+
+Keeping Vessels Connected, Operational, and Technically Ready`,
+      };
+
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = String(value ?? "");
+        submitForm.appendChild(input);
+      });
+
+      document.body.appendChild(submitForm);
+      submitForm.submit();
+      setTimeout(() => {
+        submitForm.remove();
+        iframe.remove();
+      }, 5000);
+
       return { id: ticketRef, name: form.name, email: form.email, system: form.system, status: "received", created_at: new Date().toISOString() } as Enquiry;
     },
     onSuccess: (data) => {
