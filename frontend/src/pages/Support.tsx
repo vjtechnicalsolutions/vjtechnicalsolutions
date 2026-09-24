@@ -28,17 +28,32 @@ const STEPS = [
 
 const EMPTY = { name: "", email: "", vessel_name: "", imo: "", priority: "Scheduled Port Call", subject: "", description: "" };
 
+// GitHub Pages has no server-side database, so a browser-only counter cannot be
+// guaranteed to be unique across different customers/devices. Use a readable
+// date/time reference plus a short random suffix so every request is unique.
+const createTicketReference = () => {
+  const now = new Date();
+  const date = [
+    String(now.getFullYear()).slice(-2),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0"),
+  ].join("");
+  const time = [
+    String(now.getHours()).padStart(2, "0"),
+    String(now.getMinutes()).padStart(2, "0"),
+    String(now.getSeconds()).padStart(2, "0"),
+  ].join("");
+  const suffix = crypto.randomUUID().replace(/-/g, "").slice(0, 4).toUpperCase();
+  return `VJ-${date}-${time}-${suffix}`;
+};
+
 export default function Support() {
   const [form, setForm] = useState(EMPTY);
   const [done, setDone] = useState<Ticket | null>(null);
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const key = "vjtechnicalsolutions_next_ticket";
-      const current = Number(localStorage.getItem(key) || "1");
-      const ticketNumber = Math.max(1, current);
-      localStorage.setItem(key, String(ticketNumber + 1));
-      const ticketRef = "VJ-" + String(ticketNumber).padStart(5, "0");
+      const ticketRef = createTicketReference();
 
       const submitForm = document.createElement("form");
       submitForm.method = "POST";
@@ -47,7 +62,8 @@ export default function Support() {
 
       const fields = {
         ...form,
-        _subject: "New VJ Technical Solutions Vessel Attendance Request",
+        request_reference: ticketRef,
+        _subject: `VJ Technical Solutions Attendance Request - ${ticketRef}`,
         _replyto: form.email,
         _template: "table",
         _url: "https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/support",
