@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 
 export default function RequestReceived() {
   const [params] = useSearchParams();
-  const ref = params.get("ref") || "VJ-00001";
+  const ref = params.get("ref");
 
   return (
     <main className="min-h-screen bg-[#f5f8fb] px-5 py-16 sm:py-24">
@@ -30,7 +30,9 @@ export default function RequestReceived() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#61758b]">
               Request Reference
             </p>
-            <p className="mt-2 font-mono text-2xl font-bold text-[#071c38]">{ref}</p>
+            <p className="mt-2 font-mono text-2xl font-bold text-[#071c38]">
+              {ref || "Reference pending"}
+            </p>
           </div>
 
           <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-[#334e68]">
