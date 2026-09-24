@@ -50,22 +50,7 @@ export default function EnquiryForm() {
         _template: "table",
         _url: "https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/quote",
         _next: `https://vjtechnicalsolutions.github.io/vjtechnicalsolutions/request-received?ref=${encodeURIComponent(ticketRef)}`,
-        _autoresponse: `VJ Technical Solutions – Request Received
-
-Dear Customer,
-
-Thank you for contacting VJ Technical Solutions.
-
-We have received your vessel attendance request.
-
-Request Reference: ${ticketRef}
-
-Our team will review your request and respond within 4 business hours.
-
-Best Regards,
-
-VJ Technical Solutions
-Keeping Vessels Connected, Operational, and Technically Ready`,
+        _autoresponse: `VJ Technical Solutions – Request Received | Dear Customer, thank you for contacting VJ Technical Solutions. Your vessel attendance request has been received successfully. Request Reference: ${ticketRef}. Our team will review your request and respond within 4 business hours. Best Regards, VJ Technical Solutions – Keeping Vessels Connected, Operational, and Technically Ready.`,
       };
 
       Object.entries(fields).forEach(([name, value]) => {
